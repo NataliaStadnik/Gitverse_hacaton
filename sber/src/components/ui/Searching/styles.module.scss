@@ -1,0 +1,53 @@
+@use "../../../assets/styles/variables.scss" as *;
+@use "../../../assets/styles/fonts.scss" as *;
+
+.container {
+  position: relative;
+}
+.searchBtn {
+  cursor: pointer;
+  position: absolute;
+  right: 13px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1.5px solid $headerBackground;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.searchBtn::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 1.5px;
+  background-color: $headerBackground;
+  bottom: 1px;
+  right: -6px;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.searchBtn {
+  border: 1.5px solid rgb(146, 146, 146);
+}
+
+.searchBtn::after {
+  background-color: rgb(146, 146, 146);
+}
+
+.input {
+  width: 196px;
+  height: 34px;
+  border-radius: 50px;
+  padding-left: 10px;
+  border: 1px solid #d0d9df;
+  outline: none;
+  transition: width 0.4s ease;
+}
+
+.input:focus {
+  transition: width 0.4s ease;
+  width: 994px;
+}
