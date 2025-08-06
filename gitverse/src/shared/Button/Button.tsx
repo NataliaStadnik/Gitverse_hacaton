@@ -8,7 +8,11 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({text, linkTo}) => {
-  return <Link to={linkTo}>{text}</Link>
+  return (
+    <Link className="btn" to={linkTo}>
+      {text}
+    </Link>
+  )
 }
 
 export default Button

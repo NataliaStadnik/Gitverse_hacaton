@@ -42,10 +42,8 @@ const Header = () => {
         <nav className="menu">
           <ul className="menu-list">
             {mainMenu.map((elem) => (
-              <li>
-                <Link key={elem.name} to={elem.to}>
-                  {elem.name}
-                </Link>
+              <li key={elem.name}>
+                <Link to={elem.to}>{elem.name}</Link>
               </li>
             ))}
           </ul>
@@ -54,10 +52,8 @@ const Header = () => {
         <nav className="menu">
           <ul className="menu-list menu-list__extra">
             {extraMenu.map((elem) => (
-              <li>
-                <Link key={elem.name} to={elem.to}>
-                  {elem.name}
-                </Link>
+              <li key={elem.name}>
+                <Link to={elem.to}>{elem.name}</Link>
               </li>
             ))}
           </ul>

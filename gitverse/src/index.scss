@@ -81,6 +81,9 @@ img {
   --footer-text: #606f84;
   --icons-dark: #70757d;
   --icons-light: #999da3;
+  --btn-background: #FFFFFF;
+  --btn-text: #707d8f;
+  --page-title-light: #F6F8FA;
 }
 
 :root[data-theme='dark'] {
@@ -102,6 +105,9 @@ img {
   --footer-text: #c9d1d9;
   --icons-dark: #6c747d;
   --icons-light: #8c929c;
+  --btn-background: #708AB9;
+  --btn-text: #FFFFFF;
+  --page-title-light: #C9D1D9;
 }
 
 body {
@@ -175,4 +181,16 @@ ul {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 48px;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 46px;
+  color: var(--page-heading);
+  font-weight: 700;
+  letter-spacing: .6px;
+}
+
+.title--light {
+  color: var(--page-title-light);
 }
