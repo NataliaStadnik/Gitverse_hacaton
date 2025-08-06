@@ -6,7 +6,6 @@ const backgrounds = [
   './../src/assets/images/banner-1.svg',
   './../src/assets/images/banner-2.svg',
   './../src/assets/images/banner-3.svg',
-  // './../src/assets/images/banner-4.svg',
 ]
 
 const MainBanner = () => {

@@ -1,3 +1,49 @@
 .second-banner {
-  background-color: var(--page-accent-secondary);
+  padding: 60px 0 60px 0;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 110px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 84px 0 84px 0;
+    background-color: var(--page-accent-secondary);
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: '';
+      width: 480px;
+      height: 310px;
+      background-image: url('../../assets/images/banner-4.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 480px 310px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 22px;
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--card-text);
+  }
+
+  .title {
+    max-width: 35%;
+    font-weight: 600;
+    font-size: 39px;
+    letter-spacing: initial;
+  }
+
+  .content-wrapper {
+    max-width: 26%;
+  }
 }
