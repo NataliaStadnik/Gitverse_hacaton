@@ -1,0 +1,21 @@
+.department-link {
+  position: relative;
+  padding-right: 25px;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--card-text-secondary);
+
+  &::after {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-image: url('../../assets/images/arrow-down.svg');
+    transform: rotate(-90deg);
+  }
+}

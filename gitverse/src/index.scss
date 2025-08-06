@@ -81,9 +81,13 @@ img {
   --footer-text: #606f84;
   --icons-dark: #70757d;
   --icons-light: #999da3;
-  --btn-background: #FFFFFF;
+  --btn-background: #ffffff;
   --btn-text: #707d8f;
-  --page-title-light: #F6F8FA;
+  --page-title-light: #f6f8fa;
+  --article-label-bg: #ecf1f6;
+  --article-label-text: #70757d;
+  --card-bg-rgb: 255, 255, 255;
+  --card-date: #707d8f;
 }
 
 :root[data-theme='dark'] {
@@ -105,9 +109,13 @@ img {
   --footer-text: #c9d1d9;
   --icons-dark: #6c747d;
   --icons-light: #8c929c;
-  --btn-background: #708AB9;
-  --btn-text: #FFFFFF;
-  --page-title-light: #C9D1D9;
+  --btn-background: #708ab9;
+  --btn-text: #ffffff;
+  --page-title-light: #c9d1d9;
+  --article-label-bg: #475260;
+  --article-label-text: #8c929c;
+  --card-bg-rgb: 48, 54, 61;
+  --card-date: #8191a8;
 }
 
 body {
@@ -188,9 +196,14 @@ ul {
   line-height: 46px;
   color: var(--page-heading);
   font-weight: 700;
-  letter-spacing: .6px;
 }
 
 .title--light {
   color: var(--page-title-light);
+}
+
+.top-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }

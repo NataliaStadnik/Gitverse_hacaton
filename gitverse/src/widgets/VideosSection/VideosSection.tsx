@@ -1,10 +1,14 @@
+import {ToDepartmentLink} from '@/shared'
 import './style.scss'
 
 const VideosSection = () => {
   return (
-    <section>
-      <div className='container'>
-        <h2>Видео</h2>
+    <section className="videos-section">
+      <div className="container videos-section__container">
+        <div className="top-section">
+          <h2 className="title">Видео</h2>
+          <ToDepartmentLink text="В раздел" to={''} />
+        </div>
       </div>
     </section>
   )
