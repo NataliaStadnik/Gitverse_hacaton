@@ -61,6 +61,11 @@
     line-height: 18px;
     font-weight: 400;
     color: var(--footer-text);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--card-link);
+    }
   }
 }
 
@@ -74,10 +79,34 @@
     border-radius: 50px;
     border: 1px solid var(--footer-text);
     background-color: var(--footer-icon-bg);
+    transition: all 0.2s ease-in-out;
 
     svg {
+      position: relative;
+      top: 2px;
       width: 16px;
       height: 16px;
+    }
+
+    &:hover {
+      background-color: var(--card-link);
+    }
+
+    &--dark {
+      transition: all 0.2s ease-in-out;
+
+      svg path {
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        background-color: var(--footer-icon-bg);
+        border: 1px solid var(--btn-background);
+
+        svg path {
+          fill: var(--btn-background);
+        }
+      }
     }
   }
 }

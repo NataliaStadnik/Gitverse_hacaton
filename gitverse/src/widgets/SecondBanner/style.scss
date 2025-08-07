@@ -45,4 +45,9 @@
   .content-wrapper {
     max-width: 26%;
   }
+
+  .btn:hover {
+    background-color: var(--page-accent);
+    color: #ffffff;
+  }
 }

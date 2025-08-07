@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 import './style.scss'
-import {AppRouter} from '@/shared'
+import {AppRouter, useTheme} from '@/shared'
 import {Telegram, Vk} from '@/assets/svg'
 
 const footerMunuItems = [
@@ -60,6 +60,8 @@ const socialsMedia = [
 ]
 
 const Footer = () => {
+  const {theme} = useTheme()
+
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -75,7 +77,7 @@ const Footer = () => {
 
             <div className="socials">
               {socialsMedia.map((elem) => (
-                <Link to={elem.to} key={elem.name} className="socials__link">
+                <Link to={elem.to} key={elem.name} className={`socials__link ${theme === 'dark' ? 'socials__link--dark' : ''}`}>
                   {elem.svg}
                 </Link>
               ))}

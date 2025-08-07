@@ -1,21 +1,29 @@
 .department-link {
   position: relative;
-  padding-right: 25px;
   font-size: 20px;
   line-height: 26px;
   color: var(--card-text-secondary);
+  transition: all 0.2s ease-in-out;
 
-  &::after {
-    position: absolute;
-    top: 7px;
-    right: 0;
-    content: '';
+  svg path {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: var(--card-link);
+  }
+
+  &:hover svg path {
+    fill: var(--card-link);
+  }
+
+  span {
+    padding-right: 13px;
+  }
+
+  &__arrow {
     width: 15px;
     height: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
-    background-image: url('../../assets/images/arrow-down.svg');
     transform: rotate(-90deg);
   }
 }

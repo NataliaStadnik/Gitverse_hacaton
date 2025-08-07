@@ -89,6 +89,7 @@ img {
   --card-bg-rgb: 255, 255, 255;
   --card-date: #707d8f;
   --footer-icon-bg: #606f84;
+  --search-icon: #e1e4e8;
 }
 
 :root[data-theme='dark'] {
@@ -107,7 +108,7 @@ img {
   --card-stroke: #4a525d;
   --card-link: #56759e;
   --footer-background: #24282c;
-  --footer-text: #8C929C;
+  --footer-text: #8c929c;
   --icons-dark: #6c747d;
   --icons-light: #8c929c;
   --btn-background: #708ab9;
@@ -118,6 +119,7 @@ img {
   --card-bg-rgb: 48, 54, 61;
   --card-date: #8191a8;
   --footer-icon-bg: #24282c;
+  --search-icon: #4a525d;
 }
 
 body {

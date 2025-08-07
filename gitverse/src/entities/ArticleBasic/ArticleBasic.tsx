@@ -33,10 +33,10 @@ const ArticleBasic: FC<ArticleBasicProps> = ({data}) => {
           ))}
         </div>
 
-        <Link to={''} className="article-basic__title">
-          {data.name}
+        <Link to={''}>
+          <h3 className="article-basic__title">{data.name}</h3>
+          <p className="article-basic__text">{data.text}</p>
         </Link>
-        <p className="article-basic__text">{data.text}</p>
       </div>
     </article>
   )

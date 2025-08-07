@@ -2,9 +2,10 @@ import {AppRouter, useTheme} from '@/shared'
 import './style.scss'
 import {Account, LogoBlack, LogoLight, Moon, Search, Sun} from '@/assets/svg'
 import {Link, useNavigate} from 'react-router-dom'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import HeaderLink from './HeaderLink'
 
-type MenuLinkType = {
+export type MenuLinkType = {
   name: string
   to: string
 }
@@ -23,6 +24,7 @@ const extraMenu: MenuLinkType[] = [
 
 const Header = () => {
   const [valueSearch, setValueSearch] = useState('')
+  const [isInputActive, setInput] = useState(false)
   const {toggleTheme, theme} = useTheme()
   const navigate = useNavigate()
 
@@ -32,6 +34,22 @@ const Header = () => {
     }
   }
 
+  const handleInputClick = () => {
+    setInput(true)
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLInputElement
+      if (isInputActive && target.name !== 'search') {
+        setInput(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [isInputActive])
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -39,28 +57,19 @@ const Header = () => {
           {theme === 'light' ? <LogoLight /> : <LogoBlack />}
         </Link>
 
-        <nav className="menu">
-          <ul className="menu-list">
-            {mainMenu.map((elem) => (
-              <li key={elem.name}>
-                <Link to={elem.to}>{elem.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {!isInputActive &&
+          [mainMenu, extraMenu].map((nav, i) => (
+            <nav key={i} className="menu">
+              <ul className="menu-list">
+                {nav.map((elem) => (
+                  <HeaderLink key={elem.name} elem={elem} />
+                ))}
+              </ul>
+            </nav>
+          ))}
 
-        <nav className="menu">
-          <ul className="menu-list menu-list__extra">
-            {extraMenu.map((elem) => (
-              <li key={elem.name}>
-                <Link to={elem.to}>{elem.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="panel-wrapper">
-          <div className="input-wrapper">
+        <div className={`panel-wrapper ${isInputActive ? 'panel--big' : ''}`}>
+          <div className={`input-wrapper ${isInputActive ? 'panel--big' : ''}`}>
             <input
               className="search"
               type="text"
@@ -68,10 +77,11 @@ const Header = () => {
               placeholder="Поиск"
               value={valueSearch}
               onChange={(e) => setValueSearch(e.target.value.trim())}
+              onClick={handleInputClick}
             />
             <div className="search-btn">
-              <Search colour={theme === 'dark' ? '#4a525d' : '#E1E4E8'} />
-              <button onClick={handleSearch}></button>
+              <button onClick={handleSearch} disabled={!isInputActive}></button>
+              <Search />
             </div>
           </div>
 
