@@ -7,6 +7,7 @@ import OurProductsSection from './OurProductsSection/OurProductsSection'
 import PopularNewsSection from './PopularNewsSection/PopularNewsSection'
 import SecondBanner from './SecondBanner/SecondBanner'
 import VideosSection from './VideosSection/VideosSection'
+import {ProductCardType} from './OurProductsSection/OurProductsSection'
 
 export {
   Header,
@@ -19,3 +20,5 @@ export {
   SecondBanner,
   VideosSection,
 }
+
+export type {ProductCardType}

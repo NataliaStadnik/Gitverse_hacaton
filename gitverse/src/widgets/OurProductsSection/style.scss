@@ -1,4 +1,18 @@
 .our-prod-section {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  &__item {
+    width: 23%;
+  }
+
+  .title {
+    margin-bottom: 56px;
+  }
 }
