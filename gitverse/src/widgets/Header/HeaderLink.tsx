@@ -12,11 +12,11 @@ const HeaderLink: FC<HeaderLinkProps> = ({elem}) => {
 
   return (
     <li
-      className={
+      className={`${
         location.pathname === elem.to
           ? 'menu-list__item--active'
           : 'menu-list__item'
-      }
+      } ${elem.name === 'Продукты' ? 'menu-list__extra' : ''}`}
     >
       <Link to={elem.to}>{elem.name}</Link>
     </li>

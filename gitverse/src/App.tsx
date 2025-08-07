@@ -31,6 +31,10 @@ const AboutGitPageLazy = React.lazy(
   () => import('./pages/AboutGitPage/AboutGitPage')
 )
 
+const SearchPageLazy = React.lazy(
+  () => import('./pages/SearchResult/SearchResult')
+)
+
 const App = () => {
   return (
     <>
@@ -68,6 +72,10 @@ const App = () => {
           <Route
             path={AppRouter.aboutGitVerse.path}
             element={<AboutGitPageLazy />}
+          />
+          <Route
+            path={AppRouter.searchResult.path}
+            element={<SearchPageLazy />}
           />
         </Routes>
       </main>

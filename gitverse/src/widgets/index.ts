@@ -8,6 +8,7 @@ import PopularNewsSection from './PopularNewsSection/PopularNewsSection'
 import SecondBanner from './SecondBanner/SecondBanner'
 import VideosSection from './VideosSection/VideosSection'
 import {ProductCardType} from './OurProductsSection/OurProductsSection'
+import AsideNavigation from './AsideNavigation/AsideNavigation'
 
 export {
   Header,
@@ -18,6 +19,7 @@ export {
   NewsSection,
   PopularNewsSection,
   SecondBanner,
+  AsideNavigation,
   VideosSection,
 }
 

@@ -1,0 +1,45 @@
+.filter-block {
+  width: 100%;
+  padding: 14px 32px;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  button {
+    position: relative;
+    padding-right: 23px;
+    color: var(--card-text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--card-link);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 10px 10px;
+      background-image: url('../../assets/images/arrow-down.svg');
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

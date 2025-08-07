@@ -1,0 +1,24 @@
+.searches {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .article-basic {
+    position: relative;
+    padding: 24px 32px;
+    min-height: 295px;
+
+    &__date {
+      font-size: 17px;
+      line-height: 23px;
+    }
+
+    &__top {
+      margin-bottom: 17px;
+    }
+  }
+
+  .tag-link:not(:last-child) {
+    margin-right: 20px;
+  }
+}
