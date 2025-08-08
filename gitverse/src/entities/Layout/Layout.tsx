@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({children, message, pageTitle}) => {
     <div className="container">
       <div className="layout">
         <div className="layout__header">
-          <Breadcrumbs/>
+          <Breadcrumbs />
           <DogHelper message={message} />
         </div>
 
@@ -22,7 +22,6 @@ const Layout: FC<LayoutProps> = ({children, message, pageTitle}) => {
       </div>
     </div>
   )
-
 }
 
 export default Layout

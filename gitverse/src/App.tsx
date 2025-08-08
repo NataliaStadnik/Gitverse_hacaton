@@ -36,6 +36,8 @@ const SearchPageLazy = React.lazy(
   () => import('./pages/SearchResult/SearchResult')
 )
 
+const TagPageLazy = React.lazy(() => import('./pages/TagPage/TagPage'))
+
 const App = () => {
   useTopScroll()
 
@@ -44,7 +46,6 @@ const App = () => {
       <Header />
       <main>
         <h1 className="visually-hidden">Gitverse BLOG</h1>
-        {}
         <Routes>
           <Route path={AppRouter.home.path} element={<MainLazy />} />
           <Route
@@ -55,6 +56,7 @@ const App = () => {
             path={AppRouter.article.path(':id')}
             element={<OneArticlePageLazy />}
           />
+          <Route path={AppRouter.tag.path(':text')} element={<TagPageLazy />} />
           <Route path={AppRouter.allNews.path} element={<AllNewsPageLazy />} />
           <Route
             path={AppRouter.news.path(':id')}
