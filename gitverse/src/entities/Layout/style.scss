@@ -1,0 +1,23 @@
+.layout {
+  padding-top: 40px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+
+  .title {
+    margin-bottom: 54px;
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: 0.5px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 48px;
+    padding-bottom: 28px;
+  }
+}

@@ -211,3 +211,8 @@ ul {
   align-items: flex-end;
   justify-content: space-between;
 }
+
+.layout-inner {
+  flex-grow: 0;
+  width: 57%;
+}

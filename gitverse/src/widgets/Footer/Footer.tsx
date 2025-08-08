@@ -22,10 +22,10 @@ const footerMunuItems = [
     items: [
       {
         text: 'Статьи',
-        to: '',
+        to: AppRouter.articles.path,
       },
-      {text: 'Новости', to: ''},
-      {text: 'Медиа', to: ''},
+      {text: 'Новости', to: AppRouter.allNews.path},
+      {text: 'Медиа', to: AppRouter.media.path},
     ],
   },
   {
