@@ -1,9 +1,13 @@
 import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
-import {AsideNavigation} from '@/widgets'
+import {AsideMenuType, AsideNavigation} from '@/widgets'
 
 const SearchResult = () => {
-  const asideItems = ['Все результаты', 'Статьи', 'Новости']
+  const asideItems: AsideMenuType[] = [
+    {name: 'Все результаты'},
+    {name: 'Статьи'},
+    {name: 'Новости'},
+  ]
 
   return (
     <Layout
@@ -11,7 +15,7 @@ const SearchResult = () => {
       pageTitle="Результаты поиска"
     >
       <>
-        <AsideNavigation items={asideItems} active={asideItems[0]} />
+        <AsideNavigation items={asideItems} active={asideItems[0].name} />
         <div className="layout-inner">
           <FilterBlock />
           <SearchList />

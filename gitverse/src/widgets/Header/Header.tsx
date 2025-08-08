@@ -25,18 +25,27 @@ const extraMenu: MenuLinkType[] = [
 const Header = () => {
   const [valueSearch, setValueSearch] = useState('')
   const [isInputActive, setInput] = useState(false)
+  const [btnSearch, setBtn] = useState(!isInputActive)
   const {toggleTheme, theme} = useTheme()
   const navigate = useNavigate()
 
   const handleSearch = () => {
     if (valueSearch) {
+      setBtn(true)
       navigate(AppRouter.searchResult.path)
+      setValueSearch('')
     }
   }
 
   const handleInputClick = () => {
     setInput(true)
   }
+
+  useEffect(() => {
+    if (valueSearch) {
+      setBtn(false)
+    }
+  }, [valueSearch])
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -80,7 +89,7 @@ const Header = () => {
               onClick={handleInputClick}
             />
             <div className="search-btn">
-              <button onClick={handleSearch} disabled={!isInputActive}></button>
+              <button onClick={handleSearch} disabled={btnSearch}></button>
               <Search />
             </div>
           </div>

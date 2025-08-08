@@ -11,6 +11,16 @@ import Flag from './Flag'
 import CurlyArrow from './CurlyArrow'
 import Eye from './Eye'
 import Messages from './Messages'
+import AiML from './AiML'
+import AllCategories from './AllCategories'
+import Architecture from './Architecture'
+import Career from './Career'
+import Cases from './Cases'
+import Datas from './Datas'
+import Development from './Development'
+import OpenSource from './OpenSource'
+import Safety from './Safety'
+import UI from './UI'
 
 export {
   Sun,
@@ -25,5 +35,15 @@ export {
   Flag,
   Eye,
   Messages,
-  CurlyArrow
+  CurlyArrow,
+  AiML,
+  AllCategories,
+  Architecture,
+  Career,
+  Cases,
+  Datas,
+  Development,
+  OpenSource,
+  Safety,
+  UI,
 }

@@ -1,8 +1,13 @@
-import {FC, useState} from 'react'
+import {FC, JSX, useState} from 'react'
 import './style.scss'
 
+export type AsideMenuType = {
+  name: string
+  svg?: JSX.Element
+}
+
 interface AsideNavigationProps {
-  items: string[]
+  items: AsideMenuType[]
   active: string
 }
 
@@ -16,12 +21,13 @@ const AsideNavigation: FC<AsideNavigationProps> = ({items, active}) => {
   return (
     <ul className="aside-nav">
       {items.map((elem) => (
-        <li className="aside-nav__item" key={elem}>
+        <li className="aside-nav__item" key={elem.name}>
           <button
-            className={`aside-nav__btn ${typeSearch === elem ? 'aside-nav__btn--active' : ''}`}
+            className={`aside-nav__btn ${!elem.svg ? 'aside-nav__circle' : 'aside-nav__svg'} ${typeSearch === elem.name ? 'aside-nav__btn--active' : ''}`}
             onClick={handleClick}
           >
-            {elem}
+            {elem?.svg}
+            <span>{elem.name}</span>
           </button>
         </li>
       ))}

@@ -1,6 +1,6 @@
 import {FC, JSX} from 'react'
 import './style.scss'
-import {DogHelper} from '@/shared'
+import {Breadcrumbs, DogHelper} from '@/shared'
 
 interface LayoutProps {
   children: JSX.Element
@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({children, message, pageTitle}) => {
     <div className="container">
       <div className="layout">
         <div className="layout__header">
-          <p>breadcrumbs</p>
+          <Breadcrumbs/>
           <DogHelper message={message} />
         </div>
 
@@ -22,6 +22,7 @@ const Layout: FC<LayoutProps> = ({children, message, pageTitle}) => {
       </div>
     </div>
   )
+
 }
 
 export default Layout
