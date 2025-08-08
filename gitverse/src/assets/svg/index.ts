@@ -7,6 +7,10 @@ import Search from './Search'
 import Vk from './Vk'
 import Telegram from './Telegram'
 import ArrowBtn from './ArrowBtn'
+import Flag from './Flag'
+import CurlyArrow from './CurlyArrow'
+import Eye from './Eye'
+import Messages from './Messages'
 
 export {
   Sun,
@@ -18,4 +22,8 @@ export {
   Vk,
   Telegram,
   ArrowBtn,
+  Flag,
+  Eye,
+  Messages,
+  CurlyArrow
 }

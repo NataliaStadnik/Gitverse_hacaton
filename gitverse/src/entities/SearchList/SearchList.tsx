@@ -1,13 +1,5 @@
-import ArticleBasic, {ArticleCardDataType} from '../ArticleBasic/ArticleBasic'
+import ArticleBasic, {CardWithStatisticType} from '../ArticleBasic/ArticleBasic'
 import './style.scss'
-
-type Statistic = {
-  watch: number
-  messages: number
-  saved: number
-}
-
-type CardWithStatisticType = Statistic & ArticleCardDataType
 
 const searchArticle: CardWithStatisticType = {
   id: 1,
