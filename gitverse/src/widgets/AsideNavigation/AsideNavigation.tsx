@@ -1,5 +1,17 @@
 import {FC, JSX, useState} from 'react'
 import './style.scss'
+import {
+  AiML,
+  AllCategories,
+  Architecture,
+  Career,
+  Cases,
+  Datas,
+  Development,
+  OpenSource,
+  Safety,
+  UI,
+} from '@/assets/svg'
 
 export type AsideMenuType = {
   name: string
@@ -7,11 +19,33 @@ export type AsideMenuType = {
 }
 
 interface AsideNavigationProps {
-  items: AsideMenuType[]
-  active: string
+  items?: AsideMenuType[]
+  active?: string
 }
 
-const AsideNavigation: FC<AsideNavigationProps> = ({items, active}) => {
+const asideMenuItems: AsideMenuType[] = [
+  {
+    name: 'Все категории',
+    svg: <AllCategories />,
+  },
+  {
+    name: 'Архитектура',
+    svg: <Architecture />,
+  },
+  {name: 'Данные', svg: <Datas />},
+  {name: 'Карьера', svg: <Career />},
+  {name: 'Разработка', svg: <Development />},
+  {name: 'AI/ML', svg: <AiML />},
+  {name: 'Open Source', svg: <OpenSource />},
+  {name: 'UX/UI', svg: <UI />},
+  {name: 'Кейсы', svg: <Cases />},
+  {name: 'Безопасность', svg: <Safety />},
+]
+
+const AsideNavigation: FC<AsideNavigationProps> = ({
+  items = asideMenuItems,
+  active = asideMenuItems[0].name,
+}) => {
   const [typeSearch, setTypeSearch] = useState(active)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -3,6 +3,7 @@ import './App.css'
 import {Footer, Header} from '@/widgets'
 import {AppRouter} from '@/shared'
 import React from 'react'
+import {useTopScroll} from './hooks'
 
 const MainLazy = React.lazy(() => import('./pages/Main/Main'))
 const AllArticlesPageLazy = React.lazy(
@@ -36,11 +37,14 @@ const SearchPageLazy = React.lazy(
 )
 
 const App = () => {
+  useTopScroll()
+
   return (
     <>
       <Header />
       <main>
         <h1 className="visually-hidden">Gitverse BLOG</h1>
+        {}
         <Routes>
           <Route path={AppRouter.home.path} element={<MainLazy />} />
           <Route
