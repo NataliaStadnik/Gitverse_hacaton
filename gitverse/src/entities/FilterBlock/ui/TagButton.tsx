@@ -1,6 +1,7 @@
 import {Cross} from '@/assets/svg'
 import {ArticleLabel} from '@/shared'
 import {FC} from 'react'
+import '../style.scss'
 
 interface TagButtonProps {
   text: string

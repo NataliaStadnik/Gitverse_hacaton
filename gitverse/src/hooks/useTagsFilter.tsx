@@ -27,8 +27,8 @@ export const useTagFilter = () => {
     setIsDropdownOpen(false)
   }
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev)
+  const toggleDropdown = (a:boolean) => {
+    setIsDropdownOpen(a)
   }
 
   const handleTagClick = (tag: string) => {

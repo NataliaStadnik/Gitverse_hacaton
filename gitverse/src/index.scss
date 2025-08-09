@@ -91,6 +91,8 @@ img {
   --footer-icon-bg: #606f84;
   --search-icon: #e1e4e8;
   --filter-tag: #F3F3F3;
+  --sort-tag-bg: #eaeef1;
+  --sort-tag-text: #70757d;
 }
 
 :root[data-theme='dark'] {
@@ -122,6 +124,8 @@ img {
   --footer-icon-bg: #24282c;
   --search-icon: #4a525d;
   --filter-tag: #475260;
+  --sort-tag-bg: #708ab9;
+  --sort-tag-text: #ffffff;
 }
 
 body {
@@ -217,4 +221,50 @@ ul {
 .layout-inner {
   flex-grow: 0;
   width: 57%;
+}
+
+@keyframes slide-down {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+.tags-wrapper {
+  width: 100%;
+  background-color: var(--card-background);
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 32px;
+  padding: 14px 32px;
+
+  overflow: hidden;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+
+  &--expanded {
+    animation: slide-down 0.8s ease forwards;
+  }
+
+  &--collapsed {
+    animation: slide-up 0.8s ease forwards;
+  }
 }

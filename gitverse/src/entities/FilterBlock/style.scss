@@ -16,31 +16,6 @@
   }
 }
 
-@keyframes slide-down {
-  0% {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    max-height: 500px;
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes slide-up {
-  0% {
-    max-height: 500px;
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  100% {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-}
 
 .filter-outer {
   margin-bottom: 32px;
@@ -51,25 +26,6 @@
   }
 }
 
-.tags-wrapper {
-  width: 100%;
-  background-color: var(--card-background);
-  border-radius: 0 0 12px 12px;
-  margin-bottom: 32px;
-  padding: 14px 32px;
-
-  overflow: hidden;
-  animation-fill-mode: forwards;
-  transform-origin: top;
-
-  &--expanded {
-    animation: slide-down 0.8s ease forwards;
-  }
-
-  &--collapsed {
-    animation: slide-up 0.8s ease forwards;
-  }
-}
 
 .filter-block {
   display: flex;
@@ -151,7 +107,6 @@
   position: relative;
 
   &__active {
-    // background-color: var(--page-accent-bright);
 
     .article-label {
       padding-right: 24px;
