@@ -1,8 +1,8 @@
 import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
 import {AsideNavigation} from '@/widgets'
-import {useEffect, useState} from 'react'
-import {AppRouter, BreadcrumbType, categoriesTags} from '@/shared'
+import {AppRouter, BreadcrumbType} from '@/shared'
+import {useTagFilter} from '@/hooks'
 
 const breadcrumbs: BreadcrumbType[] = [
   {text: 'Главная ', to: AppRouter.home.path},
@@ -10,23 +10,17 @@ const breadcrumbs: BreadcrumbType[] = [
 ]
 
 const AllArticlesPage = () => {
-  const [typeSearch, setTypeSearch] = useState(categoriesTags[0].name)
-  const [tagsDrop, setTagsDrop] = useState(false)
-
-  const filterTags: string[] =
-    typeSearch === 'Все категории'
-      ? Array.from(
-          new Set(
-            categoriesTags
-              .filter((obj) => Array.isArray(obj.tags))
-              .flatMap((obj) => obj.tags)
-          )
-        )
-      : categoriesTags.find((obj) => obj.name === typeSearch)?.tags || []
-
-  useEffect(() => {
-    setTagsDrop(false)
-  }, [typeSearch])
+  const {
+    selectedCategory,
+    selectedTags,
+    isDropdownOpen,
+    filterTags,
+    handleCategorySelect,
+    toggleDropdown,
+    handleTagClick,
+    handleRemoveTag,
+    handleResetTags,
+  } = useTagFilter()
 
   return (
     <Layout
@@ -35,12 +29,19 @@ const AllArticlesPage = () => {
       breadcrumbs={breadcrumbs}
     >
       <>
-        <AsideNavigation active={typeSearch} setTypeSearch={setTypeSearch} />
+        <AsideNavigation
+          active={selectedCategory}
+          setTypeSearch={handleCategorySelect}
+        />
         <div className="layout-inner">
           <FilterBlock
             allTags={filterTags}
-            tagsDrop={tagsDrop}
-            setTagsDrop={setTagsDrop}
+            tagsDrop={isDropdownOpen}
+            setTagsDrop={toggleDropdown}
+            reset={handleResetTags}
+            handleTagClick={handleTagClick}
+            handleRemoveTag={handleRemoveTag}
+            selectedTags={selectedTags}
           />
           <SearchList />
         </div>

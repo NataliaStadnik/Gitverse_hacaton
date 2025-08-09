@@ -8,12 +8,20 @@ interface FilterBlockProps {
   allTags: string[]
   tagsDrop: boolean
   setTagsDrop: (a: boolean) => void
+  reset: () => void
+  handleRemoveTag: (a: string) => void
+  handleTagClick: (a: string) => void
+  selectedTags: string[]
 }
 
 const FilterBlock: FC<FilterBlockProps> = ({
   allTags,
   tagsDrop,
   setTagsDrop,
+  reset,
+  handleRemoveTag,
+  handleTagClick,
+  selectedTags
 }) => {
   const {pathname} = useLocation()
   const location = pathname.startsWith('/tag')
@@ -28,6 +36,7 @@ const FilterBlock: FC<FilterBlockProps> = ({
             <FIlterButton key={elem} text={elem} />
           ))}
         </div>
+
         {!location && (
           <FIlterButton
             text={'Выбрать хэштеги'}
@@ -42,10 +51,18 @@ const FilterBlock: FC<FilterBlockProps> = ({
         >
           <ul className={`tags-list`}>
             {allTags.map((elem) => (
-              <TagButton key={elem} text={elem} />
+              <TagButton
+                key={elem}
+                text={elem}
+                handleRemoveTag={handleRemoveTag}
+                handleTagClick={handleTagClick}
+                isActive={selectedTags.includes(elem)}
+              />
             ))}
           </ul>
-          <button className="reset-btn">Сбросить все</button>
+          <button className="reset-btn" onClick={reset}>
+            Сбросить все
+          </button>
         </div>
       )}
     </div>
