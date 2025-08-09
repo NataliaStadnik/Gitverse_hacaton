@@ -4,7 +4,13 @@ import ProductArticle from './ProductArticle/ProductArticle'
 import Layout from './Layout/Layout'
 import FilterBlock from './FilterBlock/FilterBlock'
 import SearchList from './SearchList/SearchList'
-import { CardWithStatisticType } from './ArticleBasic/ArticleBasic'
+import {CardWithStatisticType} from './ArticleBasic/ArticleBasic'
 
-export {ArticleBasic, ProductArticle, Layout, FilterBlock, SearchList}
+export {
+  ArticleBasic,
+  ProductArticle,
+  Layout,
+  FilterBlock,
+  SearchList,
+}
 export type {ArticleCardDataType, CardWithStatisticType}

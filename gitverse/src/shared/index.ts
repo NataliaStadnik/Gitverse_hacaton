@@ -8,6 +8,7 @@ import DogHelper from './DogHelper/DogHelper'
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs'
 import {CategoriesTagsType} from './config/CategoriesTags'
 import {categoriesTags} from './config/CategoriesTags'
+import { BreadcrumbType } from './Breadcrumbs/Breadcrumbs'
 
 export {
   AppRouter,
@@ -22,4 +23,4 @@ export {
   categoriesTags,
 }
 
-export type {CategoriesTagsType}
+export type {CategoriesTagsType, BreadcrumbType}

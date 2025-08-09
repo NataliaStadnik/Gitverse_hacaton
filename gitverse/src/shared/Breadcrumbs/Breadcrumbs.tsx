@@ -1,8 +1,25 @@
+import {FC} from 'react'
 import './style.scss'
+import {Link} from 'react-router-dom'
 
-const Breadcrumbs = () => {
+export type BreadcrumbType = {
+  text: string
+  to: string
+}
+
+interface BreadcrumbsProps {
+  links: BreadcrumbType[]
+}
+
+const Breadcrumbs: FC<BreadcrumbsProps> = ({links}) => {
   return (
-    <div>Breadcrumbs</div>
+    <div className="breadcrumbs">
+      {links.map((elem) => (
+        <Link key={elem.text} to={elem.to}>
+          {elem.text}
+        </Link>
+      ))}
+    </div>
   )
 }
 

@@ -2,7 +2,12 @@ import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
 import {AsideNavigation} from '@/widgets'
 import {useEffect, useState} from 'react'
-import {categoriesTags} from '@/shared'
+import {AppRouter, BreadcrumbType, categoriesTags} from '@/shared'
+
+const breadcrumbs: BreadcrumbType[] = [
+  {text: 'Главная ', to: AppRouter.home.path},
+  {text: 'Статьи', to: AppRouter.articles.path},
+]
 
 const AllArticlesPage = () => {
   const [typeSearch, setTypeSearch] = useState(categoriesTags[0].name)
@@ -27,6 +32,7 @@ const AllArticlesPage = () => {
     <Layout
       message={'Пишу тесты и документацию, пока ты пьёшь кофе'}
       pageTitle="Статьи"
+      breadcrumbs={breadcrumbs}
     >
       <>
         <AsideNavigation active={typeSearch} setTypeSearch={setTypeSearch} />
