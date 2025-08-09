@@ -1,0 +1,30 @@
+.sorting-block {
+  width: fit-content;
+  padding: 14px 16px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 3px 16px;
+    color: var(--sort-tag-text);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: left;
+
+    &--active {
+      border-radius: 20px;
+      background-color: var(--sort-tag-bg);
+    }
+
+    &:hover {
+      border-radius: 20px;
+      background-color: var(--sort-tag-bg);
+    }
+  }
+}

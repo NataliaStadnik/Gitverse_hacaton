@@ -1,53 +1,18 @@
-import {FC, JSX, useState} from 'react'
+import {FC} from 'react'
 import './style.scss'
-import {
-  AiML,
-  AllCategories,
-  Architecture,
-  Career,
-  Cases,
-  Datas,
-  Development,
-  OpenSource,
-  Safety,
-  UI,
-} from '@/assets/svg'
-
-export type AsideMenuType = {
-  name: string
-  svg?: JSX.Element
-}
+import {categoriesTags, CategoriesTagsType} from '@/shared'
 
 interface AsideNavigationProps {
-  items?: AsideMenuType[]
+  items?: CategoriesTagsType[]
   active?: string
+  setTypeSearch: (a: string) => void
 }
 
-const asideMenuItems: AsideMenuType[] = [
-  {
-    name: 'Все категории',
-    svg: <AllCategories />,
-  },
-  {
-    name: 'Архитектура',
-    svg: <Architecture />,
-  },
-  {name: 'Данные', svg: <Datas />},
-  {name: 'Карьера', svg: <Career />},
-  {name: 'Разработка', svg: <Development />},
-  {name: 'AI/ML', svg: <AiML />},
-  {name: 'Open Source', svg: <OpenSource />},
-  {name: 'UX/UI', svg: <UI />},
-  {name: 'Кейсы', svg: <Cases />},
-  {name: 'Безопасность', svg: <Safety />},
-]
-
 const AsideNavigation: FC<AsideNavigationProps> = ({
-  items = asideMenuItems,
-  active = asideMenuItems[0].name,
+  items = categoriesTags,
+  active = categoriesTags[0].name,
+  setTypeSearch,
 }) => {
-  const [typeSearch, setTypeSearch] = useState(active)
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setTypeSearch(e.currentTarget.textContent || '')
   }
@@ -57,7 +22,7 @@ const AsideNavigation: FC<AsideNavigationProps> = ({
       {items.map((elem) => (
         <li className="aside-nav__item" key={elem.name}>
           <button
-            className={`aside-nav__btn ${!elem.svg ? 'aside-nav__circle' : 'aside-nav__svg'} ${typeSearch === elem.name ? 'aside-nav__btn--active' : ''}`}
+            className={`aside-nav__btn ${!elem.svg ? 'aside-nav__circle' : 'aside-nav__svg'} ${active === elem.name ? 'aside-nav__btn--active' : ''}`}
             onClick={handleClick}
           >
             {elem?.svg}

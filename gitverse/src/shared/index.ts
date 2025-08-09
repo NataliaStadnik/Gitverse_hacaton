@@ -6,6 +6,9 @@ import ArticleLabel from './ArticleLabel/ArticleLabel'
 import TagLink from './TagLink/TagLink'
 import DogHelper from './DogHelper/DogHelper'
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs'
+import {CategoriesTagsType} from './config/CategoriesTags'
+import {categoriesTags} from './config/CategoriesTags'
+import { BreadcrumbType } from './Breadcrumbs/Breadcrumbs'
 
 export {
   AppRouter,
@@ -17,4 +20,7 @@ export {
   TagLink,
   DogHelper,
   Breadcrumbs,
+  categoriesTags,
 }
+
+export type {CategoriesTagsType, BreadcrumbType}

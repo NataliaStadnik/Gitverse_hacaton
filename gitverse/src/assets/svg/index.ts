@@ -21,6 +21,7 @@ import Development from './Development'
 import OpenSource from './OpenSource'
 import Safety from './Safety'
 import UI from './UI'
+import Cross from './Cross'
 
 export {
   Sun,
@@ -46,4 +47,5 @@ export {
   OpenSource,
   Safety,
   UI,
+  Cross
 }
