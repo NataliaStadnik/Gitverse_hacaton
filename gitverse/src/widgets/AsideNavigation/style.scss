@@ -1,4 +1,8 @@
 .aside-nav {
+  position: sticky;
+  top: 65px;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 32px;
