@@ -3,9 +3,22 @@ import {AsideNavigation} from '@/widgets'
 import {asideItemsMunu} from '../SearchResult/SearchResult'
 import {useParams} from 'react-router-dom'
 import {AppRouter, BreadcrumbType} from '@/shared'
+import {useTagFilter} from '@/hooks'
 
 const TagPage = () => {
   const {text} = useParams()
+
+  const {
+    selectedTags,
+    selectedCategory,
+    isDropdownOpen,
+    filterTags,
+    handleCategorySelect,
+    toggleDropdown,
+    handleTagClick,
+    handleRemoveTag,
+    handleResetTags,
+  } = useTagFilter(asideItemsMunu[0].name)
 
   const breadcrumbs: BreadcrumbType[] = [
     {text: 'Главная ', to: AppRouter.home.path},
@@ -20,11 +33,20 @@ const TagPage = () => {
     >
       <>
         <AsideNavigation
+          active={selectedCategory}
+          setTypeSearch={handleCategorySelect}
           items={asideItemsMunu}
-          active={asideItemsMunu[0].name}
         />
         <div className="layout-inner">
-          <FilterBlock />
+          <FilterBlock
+            allTags={filterTags}
+            tagsDrop={isDropdownOpen}
+            setTagsDrop={toggleDropdown}
+            reset={handleResetTags}
+            handleTagClick={handleTagClick}
+            handleRemoveTag={handleRemoveTag}
+            selectedTags={selectedTags}
+          />
           <SearchList />
         </div>
       </>
