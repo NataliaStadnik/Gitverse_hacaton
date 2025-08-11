@@ -2,6 +2,7 @@ import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
 import {AsideMenuType, AsideNavigation} from '@/widgets'
 import {AppRouter, BreadcrumbType} from '@/shared'
+import {useTagFilter} from '@/hooks'
 
 export const asideItemsMunu: AsideMenuType[] = [
   {name: 'Все результаты'},
@@ -15,6 +16,18 @@ const breadcrumbs: BreadcrumbType[] = [
 ]
 
 const SearchResult = () => {
+  const {
+    selectedTags,
+    selectedCategory,
+    isDropdownOpen,
+    filterTags,
+    handleCategorySelect,
+    toggleDropdown,
+    handleTagClick,
+    handleRemoveTag,
+    handleResetTags,
+  } = useTagFilter(asideItemsMunu[0].name)
+
   return (
     <Layout
       message={'Смарт-блоки кода, которые ложатся в нужное место'}
@@ -23,11 +36,20 @@ const SearchResult = () => {
     >
       <>
         <AsideNavigation
+          active={selectedCategory}
+          setTypeSearch={handleCategorySelect}
           items={asideItemsMunu}
-          active={asideItemsMunu[0].name}
         />
         <div className="layout-inner">
-          <FilterBlock />
+          <FilterBlock
+            allTags={filterTags}
+            tagsDrop={isDropdownOpen}
+            setTagsDrop={toggleDropdown}
+            reset={handleResetTags}
+            handleTagClick={handleTagClick}
+            handleRemoveTag={handleRemoveTag}
+            selectedTags={selectedTags}
+          />
           <SearchList />
         </div>
       </>

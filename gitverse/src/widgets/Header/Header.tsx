@@ -17,7 +17,6 @@ const mainMenu: MenuLinkType[] = [
 ]
 
 const extraMenu: MenuLinkType[] = [
-  {name: 'Продукты', to: AppRouter.products.path},
   {name: 'Документация', to: AppRouter.documentation.path},
   {name: 'Почему GitVerse', to: AppRouter.aboutGitVerse.path},
 ]
@@ -26,6 +25,7 @@ const Header = () => {
   const [valueSearch, setValueSearch] = useState('')
   const [isInputActive, setInput] = useState(false)
   const [btnSearch, setBtn] = useState(!isInputActive)
+
   const {toggleTheme, theme} = useTheme()
   const navigate = useNavigate()
 
@@ -66,16 +66,26 @@ const Header = () => {
           {theme === 'light' ? <LogoLight /> : <LogoBlack />}
         </Link>
 
-        {!isInputActive &&
-          [mainMenu, extraMenu].map((nav, i) => (
-            <nav key={i} className="menu">
+        {!isInputActive && (
+          <>
+            <nav className="menu">
               <ul className="menu-list">
-                {nav.map((elem) => (
+                {mainMenu.map((elem) => (
                   <HeaderLink key={elem.name} elem={elem} />
                 ))}
               </ul>
             </nav>
-          ))}
+            <nav className="menu">
+              <ul className="menu-list">
+                <HeaderLink elem={{name: 'Продукты', to: ''}} isButton />
+
+                {extraMenu.map((elem) => (
+                  <HeaderLink key={elem.name} elem={elem} />
+                ))}
+              </ul>
+            </nav>
+          </>
+        )}
 
         <div className={`panel-wrapper ${isInputActive ? 'panel--big' : ''}`}>
           <div className={`input-wrapper ${isInputActive ? 'panel--big' : ''}`}>

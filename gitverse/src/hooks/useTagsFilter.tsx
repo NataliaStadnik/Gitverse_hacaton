@@ -1,16 +1,14 @@
 import {useState} from 'react'
 import {categoriesTags} from '@/shared'
 
-export const useTagFilter = () => {
-  const [selectedCategory, setSelectedCategory] = useState(
-    categoriesTags[0].name
-  )
+export const useTagFilter = (startCategory: string) => {
+  const [selectedCategory, setSelectedCategory] = useState(startCategory)
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   // @ts-ignore
   const filterTags: string[] =
-    selectedCategory === 'Все категории'
+    selectedCategory === 'Все категории' || 'Все результаты'
       ? Array.from(
           new Set(
             categoriesTags
@@ -27,7 +25,7 @@ export const useTagFilter = () => {
     setIsDropdownOpen(false)
   }
 
-  const toggleDropdown = (a:boolean) => {
+  const toggleDropdown = (a: boolean) => {
     setIsDropdownOpen(a)
   }
 

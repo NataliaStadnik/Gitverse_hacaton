@@ -90,7 +90,7 @@ img {
   --card-date: #707d8f;
   --footer-icon-bg: #606f84;
   --search-icon: #e1e4e8;
-  --filter-tag: #F3F3F3;
+  --filter-tag: #f3f3f3;
   --sort-tag-bg: #eaeef1;
   --sort-tag-text: #70757d;
 }
@@ -106,7 +106,7 @@ img {
   --page-field: #2b333c;
   --card-background: #30363d;
   --card-heading: #c9d1d9;
-  --card-text: #B5BEC7;
+  --card-text: #b5bec7;
   --card-text-secondary: #6b7c94;
   --card-stroke: #4a525d;
   --card-link: #56759e;
@@ -255,7 +255,7 @@ ul {
   border-radius: 0 0 12px 12px;
   margin-bottom: 32px;
   padding: 14px 32px;
-
+  box-shadow: 0px 15px 11px -6px var(--shadow-color, rgba(0, 0, 0, 0.1));
   overflow: hidden;
   animation-fill-mode: forwards;
   transform-origin: top;

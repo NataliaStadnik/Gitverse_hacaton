@@ -1,7 +1,7 @@
 import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
 import {AsideNavigation} from '@/widgets'
-import {AppRouter, BreadcrumbType} from '@/shared'
+import {AppRouter, BreadcrumbType, categoriesTags} from '@/shared'
 import {useTagFilter} from '@/hooks'
 
 const breadcrumbs: BreadcrumbType[] = [
@@ -20,7 +20,7 @@ const AllArticlesPage = () => {
     handleTagClick,
     handleRemoveTag,
     handleResetTags,
-  } = useTagFilter()
+  } = useTagFilter(categoriesTags[0].name)
 
   return (
     <Layout

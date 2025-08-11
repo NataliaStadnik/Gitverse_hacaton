@@ -67,10 +67,24 @@ const App = () => {
             path={AppRouter.products.path}
             element={<AllProductsPageLazy />}
           />
+
           <Route
-            path={AppRouter.product.path(':id')}
+            path={AppRouter.productSmartClass.path}
             element={<OneProductPageLazy />}
           />
+          <Route
+            path={AppRouter.productGigaIDE.path}
+            element={<OneProductPageLazy />}
+          />
+          <Route
+            path={AppRouter.productGigaCloude.path}
+            element={<OneProductPageLazy />}
+          />
+          <Route
+            path={AppRouter.productGigaCode.path}
+            element={<OneProductPageLazy />}
+          />
+
           <Route
             path={AppRouter.documentation.path}
             element={<DocumentationPageLazy />}

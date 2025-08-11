@@ -22,6 +22,9 @@ import OpenSource from './OpenSource'
 import Safety from './Safety'
 import UI from './UI'
 import Cross from './Cross'
+import GlobeProduct from './GlobeProduct'
+import ScProduct from './ScProduct'
+import GProduct from './GProduct'
 
 export {
   Sun,
@@ -47,5 +50,8 @@ export {
   OpenSource,
   Safety,
   UI,
-  Cross
+  Cross,
+  GProduct,
+  ScProduct,
+  GlobeProduct,
 }

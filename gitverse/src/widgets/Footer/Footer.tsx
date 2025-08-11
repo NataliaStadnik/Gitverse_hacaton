@@ -31,9 +31,9 @@ const footerMunuItems = [
   {
     name: 'Продукты',
     items: [
-      {text: 'Для образования', to: ''},
-      {text: 'GagaCode', to: ''},
-      {text: 'GigaIDE', to: ''},
+      {text: 'Для образования', to: AppRouter.productSmartClass.path},
+      {text: 'GagaCode', to: AppRouter.productGigaCode.path},
+      {text: 'GigaIDE', to: AppRouter.productGigaIDE.path},
     ],
   },
   {
