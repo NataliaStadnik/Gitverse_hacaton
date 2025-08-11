@@ -1,10 +1,10 @@
 import {FilterBlock, Layout, SearchList} from '@/entities'
 import './style.scss'
-import {AsideMenuType, AsideNavigation} from '@/widgets'
+import {AsideNavigation} from '@/widgets'
 import {AppRouter, BreadcrumbType} from '@/shared'
 import {useTagFilter} from '@/hooks'
 
-export const asideItemsMunu: AsideMenuType[] = [
+export const asideItemsMunu = [
   {name: 'Все результаты'},
   {name: 'Статьи'},
   {name: 'Новости'},
