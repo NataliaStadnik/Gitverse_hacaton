@@ -8,7 +8,7 @@ import {ThemeProvider} from '@/shared'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Gitverse_hacaton">
       <ThemeProvider>
         <App />
       </ThemeProvider>
