@@ -2,8 +2,8 @@ import {useLocation} from 'react-router-dom'
 import './style.scss'
 import {FC, useState} from 'react'
 import SortingBlock from '../SortingBlock/SortingBlock'
-import FIlterButton from './ui/FIlterButton'
 import TagButton from './ui/TagButton'
+import {ArrowButton} from '@/shared'
 
 interface FilterBlockProps {
   allTags: string[]
@@ -69,14 +69,14 @@ const FilterBlock: FC<FilterBlockProps> = ({
         <div
           className={`filter-block__wrapper ${!isTagPage ? '' : 'filter-block__wrapper--big'}`}
         >
-          <FIlterButton
+          <ArrowButton
             text={selectedSort}
             filterClick={(val) => toggleModal('sort', val)}
             tagsDrop={isSortingOpen}
             updateBtnText={selectedSort}
           />
 
-          <FIlterButton
+          <ArrowButton
             text={selectedLevel}
             filterClick={(val) => toggleModal('level', val)}
             tagsDrop={isLevelOpen}
@@ -85,7 +85,7 @@ const FilterBlock: FC<FilterBlockProps> = ({
         </div>
 
         {!isTagPage && (
-          <FIlterButton
+          <ArrowButton
             text="Выбрать хэштеги"
             filterClick={(val) => toggleModal('tags', val)}
             tagsDrop={tagsDrop}

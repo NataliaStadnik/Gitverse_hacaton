@@ -1,15 +1,15 @@
-import {ArrowBtn} from '@/assets/svg'
-import '../style.scss'
 import {FC} from 'react'
+import './style.scss'
+import {ArrowBtn} from '@/assets/svg'
 
-interface FilterButtonProps {
+interface ArrowButtonProps {
   text: string
   filterClick: (x: boolean) => void
   tagsDrop: boolean
   updateBtnText?: string
 }
 
-const FIlterButton: FC<FilterButtonProps> = ({
+const ArrowButton: FC<ArrowButtonProps> = ({
   text,
   filterClick,
   tagsDrop,
@@ -17,7 +17,7 @@ const FIlterButton: FC<FilterButtonProps> = ({
 }) => {
   return (
     <button
-      className={`filter-block__btn ${tagsDrop ? 'filter-block__btn--active' : ''}`}
+      className={`clicker-btn ${tagsDrop ? 'clicker-btn--active' : ''}`}
       onClick={() => filterClick(!tagsDrop)}
     >
       <span>{tagsDrop ? updateBtnText : text}</span>
@@ -26,4 +26,4 @@ const FIlterButton: FC<FilterButtonProps> = ({
   )
 }
 
-export default FIlterButton
+export default ArrowButton

@@ -12,9 +12,11 @@ export const AppRouter = {
 
   media: {path: '/media'},
   products: {path: '/products'},
-  product: {
-    path: (id = ':id') => `/products/${id}`,
-  },
+  productSmartClass: {path: '/products/Smart-Class'},
+  productGigaIDE: {path: '/products/Giga-IDE'},
+  productGigaCloude: {path: '/products/Giga-IDE-Cloude'},
+  productGigaCode: {path: '/products/Giga-Code'},
+
   documentation: {path: '/documentation'},
   aboutGitVerse: {path: '/about'},
   searchResult: {path: '/result'},

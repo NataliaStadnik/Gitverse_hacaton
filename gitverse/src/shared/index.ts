@@ -9,6 +9,7 @@ import Breadcrumbs from './Breadcrumbs/Breadcrumbs'
 import {CategoriesTagsType} from './config/CategoriesTags'
 import {categoriesTags} from './config/CategoriesTags'
 import { BreadcrumbType } from './Breadcrumbs/Breadcrumbs'
+import ArrowButton from './ArrowButton/ArrowButton'
 
 export {
   AppRouter,
@@ -21,6 +22,7 @@ export {
   DogHelper,
   Breadcrumbs,
   categoriesTags,
+  ArrowButton
 }
 
 export type {CategoriesTagsType, BreadcrumbType}
