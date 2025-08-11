@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 import './style.scss'
 import {AppRouter, useTheme} from '@/shared'
 import {Telegram, Vk} from '@/assets/svg'
+import logo from '@/assets/images/label-footer.svg'
 
 const footerMunuItems = [
   {
@@ -68,16 +69,17 @@ const Footer = () => {
         <div className="container footer__container">
           <div className="footer__left">
             <Link to={AppRouter.home.path} className="footer__logo">
-              <img
-                src="./../src/assets/images/label-footer.svg"
-                alt="Логотип"
-              />
+              <img src={logo} alt="Логотип" />
             </Link>
             <p className="footer__laws">2025 © Все права защищены</p>
 
             <div className="socials">
               {socialsMedia.map((elem) => (
-                <Link to={elem.to} key={elem.name} className={`socials__link ${theme === 'dark' ? 'socials__link--dark' : ''}`}>
+                <Link
+                  to={elem.to}
+                  key={elem.name}
+                  className={`socials__link ${theme === 'dark' ? 'socials__link--dark' : ''}`}
+                >
                   {elem.svg}
                 </Link>
               ))}

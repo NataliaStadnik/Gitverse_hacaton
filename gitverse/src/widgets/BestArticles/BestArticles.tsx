@@ -1,13 +1,19 @@
 import {ArticleBasic, ArticleCardDataType} from '@/entities'
 import './style.scss'
 import {AppRouter, ToDepartmentLink} from '@/shared'
+import ai from '@/assets/images/AI.svg'
+import code from '@/assets/images/Code.svg'
+import python from '@/assets/images/Python.svg'
+import gitverse from '@/assets/images/GitVerse.svg'
+import openSorce from '@/assets/images/OpenSource.svg'
+import data from '@/assets/images/Data.svg'
 
 const CardsArticlesArray: ArticleCardDataType[] = [
   {
     id: 1,
     name: 'DeepSeek: что за нейросеть и как ей пользоваться',
     tags: ['AI', 'Open Sourse', 'Машинное обучение'],
-    svg: './../src/assets/images/AI.svg',
+    svg: ai,
     label: 'AI/ML',
     text: 'Китайская нейросеть DeepSeek вызвала значительный резонанс: ее появление фактически «уронило» рынок акций крупнейших технологических компаний мира. Разбираемся, что в ней необычного, чем она лучше ChatGPT и для чего можно использовать этот искусственный интеллект.',
   },
@@ -15,7 +21,7 @@ const CardsArticlesArray: ArticleCardDataType[] = [
     id: 2,
     name: 'Что такое SQL-подзапросы',
     tags: ['SQL', 'Хранение данных', 'Программирование'],
-    svg: './../src/assets/images/Code.svg',
+    svg: code,
     label: 'Данные',
     text: 'Подзапросы — это компонент SQL (Structured Query Language), полезный для выполнения сложных операций. В этой статье рассмотрим, когда их использовать, синтаксис и примеры применения. SQL — язык программирования для взаимодействия с базами данных: с его помощью можно выполнять различные операции, например вставлять, изменять и удалять элементы.',
   },
@@ -23,7 +29,7 @@ const CardsArticlesArray: ArticleCardDataType[] = [
     id: 3,
     name: 'Как тестировать код в Python с помощью фреймворка Pytest: руководство',
     tags: ['SQL', 'Хранение данных', 'Программирование'],
-    svg: './../src/assets/images/Python.svg',
+    svg: python,
     label: 'Разработка',
     text: 'Тестирование кода — неотъемлемая часть разработки любого программного обеспечения. Для языка Python одним из наиболее эффективных инструментов тестирования стал фреймворк Pytest. Он предлагает лаконичный синтаксис, мощные возможности параметризации и фикстур, а также множество плагинов для оптимизации процесса тестирования. Pytest подходит как для простых проектов, так и для сложных систем с множеством взаимосвязанных модулей.',
   },
@@ -31,7 +37,7 @@ const CardsArticlesArray: ArticleCardDataType[] = [
     id: 4,
     name: 'Релиз GitVerse 11.0.0. Что нового',
     tags: ['Python', 'Тестирование'],
-    svg: './../src/assets/images/GitVerse.svg',
+    svg: gitverse,
     label: 'Open Source',
     text: 'Такого о наших релизах вы еще не читали. Друзья, привет! Вот вы ждали-ждали, и вот он — Gitverse 11.0.0. Как всегда, мы решили не просто «что-то улучшить», а бахнуть так, чтобы вы кайфанули. Давайте разберем, что тут нового, полезного и вообще — «за что это нам такое счастье».',
   },
@@ -39,7 +45,7 @@ const CardsArticlesArray: ArticleCardDataType[] = [
     id: 5,
     name: 'Первое исследование open source от СберТеха',
     tags: ['Open Sourse'],
-    svg: './../src/assets/images/OpenSource.svg',
+    svg: openSorce,
     label: 'Open Source',
     text: 'Миграция данных позволяет перенести информацию из одной системы хранения или вычислительной среды в другую. В этой статье рассмотрим миграцию в программировании и объясним, как эффективно осуществить перенос из одного места в другое, используя проверенные инструменты.',
   },
@@ -47,7 +53,7 @@ const CardsArticlesArray: ArticleCardDataType[] = [
     id: 6,
     name: 'Миграция: что это такое, и как использовать',
     tags: ['Программирование'],
-    svg: './../src/assets/images/Data.svg',
+    svg: data,
     label: 'Разработка',
     text: 'Миграция данных позволяет перенести информацию из одной системы хранения или вычислительной среды в другую. В этой статье рассмотрим миграцию в программировании и объясним, как эффективно осуществить перенос из одного места в другое, используя проверенные инструменты.',
   },

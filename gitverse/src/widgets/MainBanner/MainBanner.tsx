@@ -1,12 +1,11 @@
 import {Button} from '@/shared'
 import './style.scss'
 import {useEffect, useState} from 'react'
+import banner1 from '@/assets/images/banner-1.svg'
+import banner2 from '@/assets/images/banner-2.svg'
+import banner3 from '@/assets/images/banner-3.svg'
 
-const backgrounds = [
-  './../src/assets/images/banner-1.svg',
-  './../src/assets/images/banner-2.svg',
-  './../src/assets/images/banner-3.svg',
-]
+const backgrounds = [banner1, banner2, banner3]
 
 const MainBanner = () => {
   const [index, setIndex] = useState(0)

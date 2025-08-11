@@ -1,6 +1,10 @@
 import {ProductArticle} from '@/entities'
 import './style.scss'
 import {AppRouter} from '@/shared'
+import prod1 from '@/assets/images/prod-icon-1.svg'
+import prod2 from '@/assets/images/prod-icon-2.svg'
+import prod3 from '@/assets/images/prod-icon-3.svg'
+import prod4 from '@/assets/images/prod-icon-4.svg'
 
 export type ProductCardType = {
   name: string
@@ -12,25 +16,25 @@ export type ProductCardType = {
 const productsArray: ProductCardType[] = [
   {
     name: 'Smart Class',
-    svg: './../src/assets/images/prod-icon-1.svg',
+    svg: prod1,
     text: 'Инструмент для обучения и онбординга ИТ-специалистов',
     path: AppRouter.productSmartClass.path,
   },
   {
     name: 'Giga IDE',
-    svg: './../src/assets/images/prod-icon-2.svg',
+    svg: prod2,
     text: 'IDE на базе IDEA/PyCharm Community и еще 70 инструментов',
     path: AppRouter.productGigaIDE.path,
   },
   {
     name: 'Giga IDE Cloude',
-    svg: './../src/assets/images/prod-icon-3.svg',
+    svg: prod3,
     text: 'Облачное решение для ваших проектов',
     path: AppRouter.productGigaCloude.path,
   },
   {
     name: 'Giga Code',
-    svg: './../src/assets/images/prod-icon-4.svg',
+    svg: prod4,
     text: 'AI-ассистент разработчика, который ускоряет создание ПО',
     path: AppRouter.productGigaCode.path,
   },

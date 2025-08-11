@@ -8,18 +8,21 @@ import {Navigation} from 'swiper/modules'
 import type {Swiper as SwiperClass} from 'swiper'
 import NewsSliderArrow from '@/assets/svg/NewsSliderArrow'
 import {useTheme} from '@/shared'
+import news1 from '@/assets/images/newscard-1.png'
+import news2 from '@/assets/images/newscard-2.png'
+import news3 from '@/assets/images/newscard-3.png'
 
 const NewsCardArray: NewsCardDataType[] = [
   {
     id: 1,
-    img: './../src/assets/images/newscard-1.png',
+    img: news1,
     label: 'Событие',
     title: 'GigaConf 2024: новости конференции и релиз новой IDE',
     text: 'Разработчикам стала доступна российская среда разработки GigaIDE со встроенным AI-ассистентом',
   },
   {
     id: 2,
-    img: './../src/assets/images/newscard-2.png',
+    img: news2,
     label: 'Доклад',
     title:
       'Запись доклада Анатолия Шипова, Олега Чирухина и Андрея Слекеничса о GigaIDE',
@@ -27,28 +30,28 @@ const NewsCardArray: NewsCardDataType[] = [
   },
   {
     id: 3,
-    img: './../src/assets/images/newscard-3.png',
+    img: news3,
     label: 'Обзор',
     title: 'Amplicode: Обзор GigaIDE от СБЕРа',
     text: 'Компания Amplicode протестировала GigaIDE и делится впечатлениями',
   },
   {
     id: 4,
-    img: './../src/assets/images/newscard-1.png',
+    img: news1,
     label: 'Событие',
     title: 'GigaConf 2024: новости конференции и релиз новой IDE',
     text: 'Разработчикам стала доступна российская среда разработки GigaIDE со встроенным AI-ассистентом',
   },
   {
     id: 5,
-    img: './../src/assets/images/newscard-3.png',
+    img: news3,
     label: 'Обзор',
     title: 'Amplicode: Обзор GigaIDE от СБЕРа',
     text: 'Компания Amplicode протестировала GigaIDE и делится впечатлениями',
   },
   {
     id: 6,
-    img: './../src/assets/images/newscard-1.png',
+    img: news1,
     label: 'Событие',
     title: 'GigaConf 2024: новости конференции и релиз новой IDE',
     text: 'Разработчикам стала доступна российская среда разработки GigaIDE со встроенным AI-ассистентом',
