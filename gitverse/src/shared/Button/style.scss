@@ -1,16 +1,16 @@
 .btn {
   display: block;
   width: fit-content;
-  padding: 11px 22px;
+  padding: 11px 31px;
   background-color: var(--btn-background);
-  color: var(--btn-text);
+  color: #ffffff;
   border-radius: 12px;
   font-size: 20px;
-  line-height: 26px;
+  line-height: 21px;
   font-weight: 400;
   transition: all .2s ease-in-out;
 
   &:hover {
-    background-color: var(--page-accent-secondary);
+    background-color: #4468a9;
   }
 }
