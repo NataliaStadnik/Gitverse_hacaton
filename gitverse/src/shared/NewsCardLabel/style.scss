@@ -1,0 +1,9 @@
+.newscard-label {
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: var(--newscard-label-text);
+  background-color: var(--newscard-label-bg);
+  font-size: 14px;
+  line-height: 16px;
+  max-width: fit-content;
+}

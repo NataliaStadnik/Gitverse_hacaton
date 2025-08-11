@@ -93,6 +93,8 @@ img {
   --filter-tag: #f3f3f3;
   --sort-tag-bg: #eaeef1;
   --sort-tag-text: #70757d;
+  --newscard-label-bg: #f6f8fa;
+  --newscard-label-text: #707d8f;
 }
 
 :root[data-theme='dark'] {
@@ -101,7 +103,7 @@ img {
   --page-heading: #c9d1d9;
   --page-accent: #212c36;
   --page-accent-bright: #708ab9;
-  --page-accent-secondary: #363e4a;
+  --page-accent-secondary: #212c36;
   --page-link: #56759e;
   --page-field: #2b333c;
   --card-background: #30363d;
@@ -126,6 +128,8 @@ img {
   --filter-tag: #475260;
   --sort-tag-bg: #708ab9;
   --sort-tag-text: #ffffff;
+  --newscard-label-bg: #30363d;
+  --newscard-label-text: #c9d1d9;
 }
 
 body {
