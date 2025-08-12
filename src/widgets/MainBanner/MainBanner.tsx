@@ -1,12 +1,14 @@
 import {Button} from '@/shared'
 import './style.scss'
-import {useRef, useEffect, JSX} from 'react'
+import {useRef, useEffect, JSX, useState} from 'react'
 import {GlobeProduct, GProduct, ScProduct} from '@/assets/svg'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Autoplay, EffectFade, Pagination} from 'swiper/modules'
 import 'swiper/css'
+import {AnimationBanner} from './ui'
 
 type ContentBannerType = {
+  id: string
   title: string[]
   text: string
   svg: (isHover: string) => JSX.Element
@@ -14,16 +16,19 @@ type ContentBannerType = {
 
 const contentBanner: ContentBannerType[] = [
   {
+    id: 'Sc',
     title: ['SmartClass', 'для ИТ-команд'],
     text: 'Ваш цифровой наставник для новых сотрудников',
     svg: (isHover: string) => <ScProduct classes={isHover} />,
   },
   {
+    id: 'G',
     title: ['Разработка без границ', 'с CodeIDE'],
     text: 'Java, Kotlin, Python и ещё 70 инструментов',
     svg: (isHover: string) => <GProduct classes={isHover} />,
   },
   {
+    id: 'Globe',
     title: ['Создавайте и развивайте', 'проекты с AI-помощником'],
     text: 'Ваш умный партнёр в коде, идеях и автоматизации',
     svg: (isHover: string) => <GlobeProduct classes={isHover} />,
@@ -52,6 +57,8 @@ const MainBanner = () => {
     swiperRef.current?.swiper?.autoplay?.resume()
   }
 
+  const [activeIndex, setActiveIndex] = useState(0)
+
   return (
     <section
       className="main-banner"
@@ -75,6 +82,7 @@ const MainBanner = () => {
           speed={duration}
           loop
           className="main-banner__slider"
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         >
           {contentBanner.map((elem, i) => (
             <SwiperSlide key={i}>
@@ -89,11 +97,7 @@ const MainBanner = () => {
                   <Button text="Подробнее" linkTo="#" />
                 </div>
 
-                <div className="animation-banner">
-                  <div className="boble-big">
-                    {elem.svg('active')}
-                  </div>
-                </div>
+                <AnimationBanner svg={elem.svg} activeIndex={activeIndex} />
               </div>
             </SwiperSlide>
           ))}
