@@ -3,6 +3,7 @@ import './style.scss'
 import {ArticleLabel, TagLink} from '@/shared'
 import {Link} from 'react-router-dom'
 import {CurlyArrow, Eye, Flag, Messages} from '@/assets/svg'
+import {truncateText} from '@/shared/utils/truncateText'
 
 export type ArticleCardDataType = {
   id: number
@@ -68,8 +69,10 @@ const ArticleBasic: FC<ArticleBasicProps> = ({data}) => {
         </div>
 
         <Link to={''}>
-          <h3 className="article-basic__title">{data.name}</h3>
-          <p className="article-basic__text">{data.text}</p>
+          <h3 className="article-basic__title">
+            {truncateText(data.name, 55)}
+          </h3>
+          <p className="article-basic__text">{truncateText(data.text, 84)}</p>
         </Link>
       </div>
     </article>
