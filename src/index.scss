@@ -96,6 +96,9 @@ img {
   --newscard-label-bg: #f6f8fa;
   --newscard-label-text: #707d8f;
   --text-banner-blue: #f6f8fa;
+  --bg-podcasts: #ecf1f6;
+  --bg-podcasts-card: #ffffff;
+  --podcasts-card--text: #707d8f;
 }
 
 :root[data-theme='dark'] {
@@ -132,6 +135,9 @@ img {
   --newscard-label-bg: #30363d;
   --newscard-label-text: #c9d1d9;
   --text-banner-blue: #c9d1d9;
+  --bg-podcasts: #363e4a;
+  --bg-podcasts-card: #30363d;
+  --podcasts-card--text: #8191a8;
 }
 
 body {
