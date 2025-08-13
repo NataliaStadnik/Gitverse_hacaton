@@ -17,7 +17,7 @@ const Main = () => {
       <NewsSection />
       <PopularNewsSection />
       <SecondBanner />
-      <VideosSection />
+      <VideosSection headingSection="Видео" headingSectionClassName="title" />
       <OurProductsSection />
     </>
   )

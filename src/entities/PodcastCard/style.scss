@@ -1,0 +1,31 @@
+.podcast-card {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 184px;
+    height: 184px;
+    background-color: var(--bg-podcasts-card);
+    border-radius: 12px;
+
+    padding-top: 28px;
+  }
+
+  &__img {
+    padding-bottom: 26px;
+  }
+
+  &__textgroup {
+    display: flex;
+    flex-direction: column;
+    color: var(--podcasts-card--text);
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}

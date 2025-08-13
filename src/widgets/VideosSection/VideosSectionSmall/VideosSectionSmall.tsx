@@ -52,8 +52,14 @@ type Props = {
   headingSection: string
   headingSectionClassName: string
 }
+const VideosSectionSmall = ({
+  headingSectionClassName,
+  headingSection,
+}: Props) => {
+  const randomThreeCards = [...VideoCardArray]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3)
 
-const VideosSection = ({headingSectionClassName, headingSection}: Props) => {
   return (
     <section className="videos-section">
       <div className="container videos-section__container">
@@ -62,7 +68,7 @@ const VideosSection = ({headingSectionClassName, headingSection}: Props) => {
           <ToDepartmentLink text="В раздел" to={AppRouter.media.path} />
         </div>
         <div className="videos-section__cards">
-          {VideoCardArray.map((card) => (
+          {randomThreeCards.map((card) => (
             <VideoCard
               key={card.id}
               img={card.img}
@@ -76,4 +82,4 @@ const VideosSection = ({headingSectionClassName, headingSection}: Props) => {
   )
 }
 
-export default VideosSection
+export default VideosSectionSmall
