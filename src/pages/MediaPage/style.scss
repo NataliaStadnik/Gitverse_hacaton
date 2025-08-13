@@ -1,4 +1,8 @@
 .media-page {
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
   &__head-title {
     font-size: 40px;
     color: var(--page-heading);
