@@ -111,9 +111,7 @@ const VideosSection = ({
             <VideoCard
               key={card.id}
               to={AppRouter.mediaVideo.path(
-                to
-                  ? (to.split('/').at(-1) as MediaSubpagesEnum)
-                  : card.categoryLink,
+                card.categoryLink,
                 card.id.toString()
               )}
               img={card.img}
