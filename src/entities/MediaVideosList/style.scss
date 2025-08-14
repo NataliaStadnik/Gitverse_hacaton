@@ -34,6 +34,12 @@
     &__category {
       top: 190px;
     }
+
+    &__bottom {
+      padding: 30px 24px;
+      z-index: 100;
+      bottom: 0;
+    }
   }
 }
 

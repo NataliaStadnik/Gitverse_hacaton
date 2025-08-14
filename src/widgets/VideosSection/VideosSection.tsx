@@ -1,7 +1,6 @@
 import {AppRouter, MediaSubpagesEnum, ToDepartmentLink} from '@/shared'
 import './style.scss'
-import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
-import VideoCard from '@/entities/VideoCard/VideoCard'
+
 import video1 from '@/assets/images/video-img1.png'
 import video2 from '@/assets/images/video-img2.png'
 import video3 from '@/assets/images/video-img3.png'
@@ -12,8 +11,9 @@ import Cup from '@/assets/images/CupIcon.svg'
 import InfinityIcon from '@/assets/images/InfinityIcon.svg'
 import Git from '@/assets/images/GitIcon.svg'
 import CodeIcon from '@/assets/images/CodeIcon.svg'
+import {VideoCard, VideoCardDataType} from '@/entities'
 
-type ExtendedVideoCardDataType = VideoCardDataType & {
+export type ExtendedVideoCardDataType = VideoCardDataType & {
   svg: string
   podcast: string
   saved: number

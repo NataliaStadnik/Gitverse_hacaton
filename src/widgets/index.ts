@@ -12,6 +12,7 @@ import {ProductCardType} from './OurProductsSection/OurProductsSection'
 import AsideNavigation from './AsideNavigation/AsideNavigation'
 import Podcasts from './Podcasts/Podcasts'
 import { VideoCardArray } from './VideosSection/VideosSection'
+import { ExtendedVideoCardDataType } from './VideosSection/VideosSection'
 
 export {
   Header,
@@ -29,4 +30,4 @@ export {
   VideoCardArray
 }
 
-export type {ProductCardType}
+export type {ProductCardType, ExtendedVideoCardDataType}

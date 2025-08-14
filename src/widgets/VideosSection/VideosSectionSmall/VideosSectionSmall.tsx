@@ -1,7 +1,6 @@
 import {AppRouter, MediaSubpagesEnum, ToDepartmentLink} from '@/shared'
 import './style.scss'
-import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
-import VideoCard from '@/entities/VideoCard/VideoCard'
+import {VideoCard, VideoCardDataType} from '@/entities'
 import video1 from '@/assets/images/video-img1.png'
 import video2 from '@/assets/images/video-img2.png'
 import video3 from '@/assets/images/video-img3.png'

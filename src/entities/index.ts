@@ -6,7 +6,9 @@ import FilterBlock from './FilterBlock/FilterBlock'
 import {searchArticle} from './SearchList/SearchList'
 import {CardWithStatisticType} from './ArticleBasic/ArticleBasic'
 import SortingBlock from './SortingBlock/SortingBlock'
-import MediaArticle from './MediaArticle/MediaArticle'
+import VideoCard from './VideoCard/VideoCard'
+import {VideoCardDataType} from './VideoCard/VideoCard'
+import MediaVideosList from './MediaVideosList/MediaVideosList'
 
 export {
   ArticleBasic,
@@ -14,7 +16,9 @@ export {
   Layout,
   FilterBlock,
   SortingBlock,
-  MediaArticle,
   searchArticle,
+  VideoCard,
+  MediaVideosList,
 }
-export type {ArticleCardDataType, CardWithStatisticType}
+
+export type {ArticleCardDataType, CardWithStatisticType, VideoCardDataType}
