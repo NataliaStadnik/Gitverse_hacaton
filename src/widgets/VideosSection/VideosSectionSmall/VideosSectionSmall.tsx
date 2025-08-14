@@ -1,4 +1,4 @@
-import {ToDepartmentLink} from '@/shared'
+import {AppRouter, MediaSubpagesEnum, ToDepartmentLink} from '@/shared'
 import './style.scss'
 import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
 import VideoCard from '@/entities/VideoCard/VideoCard'
@@ -79,6 +79,11 @@ const VideosSectionSmall = ({
           {randomThreeCards.map((card) => (
             <VideoCard
               key={card.id}
+              to={AppRouter.mediaVideo.path(
+                to.split('/').at(-1) as MediaSubpagesEnum,
+                card.id.toString()
+              )}
+              id={card.id}
               img={card.img}
               title={card.title}
               text={card.text}

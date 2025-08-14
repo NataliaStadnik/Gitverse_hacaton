@@ -1,4 +1,4 @@
-import {ToDepartmentLink} from '@/shared'
+import {AppRouter, MediaSubpagesEnum, ToDepartmentLink} from '@/shared'
 import './style.scss'
 import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
 import VideoCard from '@/entities/VideoCard/VideoCard'
@@ -29,6 +29,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     saved: 20,
     podcast: 'GIT без паники',
     svg: Git,
+    categoryLink: MediaSubpagesEnum.Guides,
   },
   {
     id: 2,
@@ -39,6 +40,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     saved: 11,
     podcast: 'DEVOPS за чашкой кофе',
     svg: Cup,
+    categoryLink: MediaSubpagesEnum.Guides,
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     saved: 12,
     podcast: 'DEVOPS за чашкой кофе',
     svg: Cup,
+    categoryLink: MediaSubpagesEnum.Reviews,
   },
   {
     id: 4,
@@ -59,6 +62,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     podcast: 'GIT без паники',
     saved: 10,
     svg: Git,
+    categoryLink: MediaSubpagesEnum.Reviews,
   },
   {
     id: 5,
@@ -69,6 +73,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     saved: 15,
     podcast: 'СI/CD просто',
     svg: InfinityIcon,
+    categoryLink: MediaSubpagesEnum.Reviews,
   },
   {
     id: 6,
@@ -79,6 +84,7 @@ export const VideoCardArray: ExtendedVideoCardDataType[] = [
     saved: 18,
     podcast: 'Инструменты программиста',
     svg: CodeIcon,
+    categoryLink: MediaSubpagesEnum.Reviews,
   },
 ]
 
@@ -104,6 +110,13 @@ const VideosSection = ({
           {VideoCardArray.map((card) => (
             <VideoCard
               key={card.id}
+              to={AppRouter.mediaVideo.path(
+                to
+                  ? (to.split('/').at(-1) as MediaSubpagesEnum)
+                  : card.categoryLink,
+                card.id.toString()
+              )}
+              id={card.id}
               img={card.img}
               title={card.title}
               text={card.text}

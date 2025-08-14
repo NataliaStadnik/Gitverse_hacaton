@@ -24,6 +24,12 @@ export const AppRouter = {
     path: (category: MediaSubpagesEnum = MediaSubpagesEnum.Popular) =>
       `/media/${category}`,
   },
+  mediaVideo: {
+    path: (
+      category: MediaSubpagesEnum = MediaSubpagesEnum.Popular,
+      id = ':id'
+    ) => `/media/${category}/${id}`,
+  },
 
   products: {path: '/products'},
   productSmartClass: {path: '/products/Smart-Class'},

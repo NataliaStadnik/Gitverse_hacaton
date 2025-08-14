@@ -37,8 +37,13 @@ const SearchPageLazy = React.lazy(
 )
 
 const TagPageLazy = React.lazy(() => import('./pages/TagPage/TagPage'))
+
 const MediaSubPageLazy = React.lazy(
   () => import('./pages/MediaSubpage/MediaSubpage')
+)
+
+const OneVideoPageLazy = React.lazy(
+  () => import('./pages/OneVideoPage/OneVideoPage')
 )
 
 const App = () => {
@@ -71,6 +76,13 @@ const App = () => {
               ':category' as MediaSubpagesEnum
             )}
             element={<MediaSubPageLazy />}
+          />
+          <Route
+            path={AppRouter.mediaVideo.path(
+              ':category' as MediaSubpagesEnum,
+              ':id'
+            )}
+            element={<OneVideoPageLazy />}
           />
           <Route
             path={AppRouter.products.path}

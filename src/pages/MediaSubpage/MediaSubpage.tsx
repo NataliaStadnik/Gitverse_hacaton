@@ -63,6 +63,11 @@ const MediaSubpage = () => {
               <li key={card.id}>
                 <VideoCard
                   key={card.id}
+                  to={AppRouter.mediaVideo.path(
+                    safeCategory,
+                    card.id.toString()
+                  )}
+                  id={card.id}
                   img={card.img}
                   title={card.title}
                   text={card.text}
