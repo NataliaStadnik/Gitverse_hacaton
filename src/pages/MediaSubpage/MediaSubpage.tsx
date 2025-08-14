@@ -1,4 +1,4 @@
-import {ArticleBasic, Layout, searchArticle} from '@/entities'
+import {Layout} from '@/entities'
 import './style.scss'
 import {
   AppRouter,
@@ -6,9 +6,11 @@ import {
   CategoriesTagsType,
   MediaSubpagesEnum,
 } from '@/shared'
-import {AsideNavigation} from '@/widgets'
+import {AsideNavigation, VideoCardArray} from '@/widgets'
 import {useTagFilter} from '@/hooks'
 import {useParams} from 'react-router-dom'
+import VideoCard from '@/entities/VideoCard/VideoCard'
+import TopMediaCard from './TopMediaCard'
 
 export const asideItemsMunu: CategoriesTagsType[] = [
   {name: 'Популярное', to: MediaSubpagesEnum.Popular},
@@ -56,9 +58,24 @@ const MediaSubpage = () => {
           items={asideItemsMunu}
         />
         <div className="layout-inner">
-          <ul className="searches">
-            {[1, 2, 3, 4, 5].map((elem) => (
-              <ArticleBasic key={elem} data={searchArticle} />
+          <ul className="media-list">
+            {VideoCardArray.map((card) => (
+              <li key={card.id}>
+                <VideoCard
+                  key={card.id}
+                  img={card.img}
+                  title={card.title}
+                  text={card.text}
+                  category={card.category}
+                  children={
+                    <TopMediaCard
+                      podcast={card.podcast}
+                      saved={card.saved}
+                      svg={card.svg}
+                    />
+                  }
+                />
+              </li>
             ))}
           </ul>
         </div>

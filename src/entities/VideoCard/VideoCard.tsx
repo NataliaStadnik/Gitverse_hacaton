@@ -2,12 +2,14 @@ import './style.scss'
 import {Link} from 'react-router-dom'
 import {truncateText} from '@/shared/utils/truncateText'
 import PlayImg from '@/assets/images/Play.svg'
+import { JSX } from 'react'
 
 type Props = {
   img?: string
   title: string
   text: string
   category: string
+  children?: JSX.Element
 }
 
 export type VideoCardDataType = {
@@ -16,9 +18,12 @@ export type VideoCardDataType = {
   title: string
   text: string
   category: string
+  svg: string
+  podcast: string
+  saved: number
 }
 
-const VideoCard = ({img, title, text, category}: Props) => {
+const VideoCard = ({img, title, text, category, children}: Props) => {
   return (
     <Link className="videocard" to={''}>
       <div className="videocard__image-wrapper">
@@ -29,7 +34,10 @@ const VideoCard = ({img, title, text, category}: Props) => {
         <div className="videocard__category">{category}</div>
       </div>
 
-      <p className="videocard__text">{truncateText(text, 100)}</p>
+      <div className="videocard__text">
+        {children}
+        <p>{truncateText(text, 100)}</p>
+      </div>
     </Link>
   )
 }

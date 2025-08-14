@@ -1,4 +1,4 @@
-import {AppRouter, ToDepartmentLink} from '@/shared'
+import {ToDepartmentLink} from '@/shared'
 import './style.scss'
 import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
 import VideoCard from '@/entities/VideoCard/VideoCard'
@@ -8,14 +8,21 @@ import video3 from '@/assets/images/video-img3.png'
 import video4 from '@/assets/images/video-img4.png'
 import video5 from '@/assets/images/video-img5.png'
 import video6 from '@/assets/images/video-img6.png'
+import Cup from '@/assets/images/CupIcon.svg'
+import InfinityIcon from '@/assets/images/InfinityIcon.svg'
+import Git from '@/assets/images/GitIcon.svg'
+import CodeIcon from '@/assets/images/CodeIcon.svg'
 
-const VideoCardArray: VideoCardDataType[] = [
+export const VideoCardArray: VideoCardDataType[] = [
   {
     id: 1,
     img: video1,
-    title: 'Git для начинающих',
+    title: 'Git для начинающих: основные команды и лучшие практики',
     text: 'История из практики с разбором типичных ошибок и советами по предотвращению потери данных в командной работе',
     category: 'Гайд',
+    saved: 20,
+    podcast: 'GIT без паники',
+    svg: Git,
   },
   {
     id: 2,
@@ -23,6 +30,9 @@ const VideoCardArray: VideoCardDataType[] = [
     title: 'GitLab и GitHub',
     text: 'Обзор ключевых возможностей обеих платформ, их отличия и советы по выбору для разных сценариев командной работы',
     category: 'Гайд',
+    saved: 11,
+    podcast: 'DEVOPS за чашкой кофе',
+    svg: Cup,
   },
   {
     id: 3,
@@ -30,6 +40,9 @@ const VideoCardArray: VideoCardDataType[] = [
     title: 'Open Sourse. Как начать',
     text: 'Гайд для новичков по поиску open source проектов, оформлению pull request’ов и взаимодействию с сообществом',
     category: 'Обзоры',
+    saved: 12,
+    podcast: 'DEVOPS за чашкой кофе',
+    svg: Cup,
   },
   {
     id: 4,
@@ -37,6 +50,9 @@ const VideoCardArray: VideoCardDataType[] = [
     title: 'Как Git спас команду от потери кода',
     text: 'История из практики с разбором типичных ошибок и советами по предотвращению потери данных в командной работе',
     category: 'Обзоры',
+    podcast: 'GIT без паники',
+    saved: 10,
+    svg: Git,
   },
   {
     id: 5,
@@ -44,6 +60,9 @@ const VideoCardArray: VideoCardDataType[] = [
     title: 'Автоматизация сборки и деплоя с помощью GitHub Actions',
     text: 'Практический разбор настройки пайплайнов CI/CD для автоматической сборки и деплоя проектов на GitHub',
     category: 'Обзоры',
+    saved: 15,
+    podcast: 'СI/CD просто',
+    svg: InfinityIcon,
   },
   {
     id: 6,
@@ -51,6 +70,9 @@ const VideoCardArray: VideoCardDataType[] = [
     title: 'Git HooksКак автоматизировать задачи ',
     text: 'Настройка и применение Git Hooks для проверки кода, автоматического форматирования и других задач до и после коммитов',
     category: 'Обзоры',
+    saved: 18,
+    podcast: 'Инструменты программиста',
+    svg: CodeIcon,
   },
 ]
 
@@ -60,7 +82,11 @@ type Props = {
   to: string
 }
 
-const VideosSection = ({headingSectionClassName, headingSection, to}: Props) => {
+const VideosSection = ({
+  headingSectionClassName,
+  headingSection,
+  to,
+}: Props) => {
   return (
     <section className="videos-section">
       <div className="container videos-section__container">

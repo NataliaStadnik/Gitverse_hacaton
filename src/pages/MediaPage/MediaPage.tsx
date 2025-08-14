@@ -1,9 +1,11 @@
 import './style.scss'
-import {AppRouter, DogHelper} from '@/shared'
-import {OurProductsSection} from '@/widgets'
-import Podcasts from '@/widgets/Podcasts/Podcasts'
-import {VideosSection} from '@/widgets'
-import VideosSectionSmall from '@/widgets/VideosSection/VideosSectionSmall/VideosSectionSmall'
+import {AppRouter, DogHelper, MediaSubpagesEnum} from '@/shared'
+import {
+  OurProductsSection,
+  Podcasts,
+  VideosSection,
+  VideosSectionSmall,
+} from '@/widgets'
 
 const MediaPage = () => {
   return (
@@ -15,23 +17,23 @@ const MediaPage = () => {
       <VideosSection
         headingSection="Популярное"
         headingSectionClassName="title"
-        to={AppRouter.mediaSubpages.path('popular')}
+        to={AppRouter.mediaSubpages.path(MediaSubpagesEnum.Popular)}
       />
       <Podcasts />
       <VideosSectionSmall
         headingSection="Обзоры"
         headingSectionClassName="title"
-        to={AppRouter.mediaSubpages.path('reviews')}
+        to={AppRouter.mediaSubpages.path(MediaSubpagesEnum.Reviews)}
       />
       <VideosSectionSmall
         headingSection="Кейсы"
         headingSectionClassName="title"
-        to={AppRouter.mediaSubpages.path('cases')}
+        to={AppRouter.mediaSubpages.path(MediaSubpagesEnum.Cases)}
       />
       <VideosSectionSmall
         headingSection="Гайды"
         headingSectionClassName="title"
-        to={AppRouter.mediaSubpages.path('guides')}
+        to={AppRouter.mediaSubpages.path(MediaSubpagesEnum.Guides)}
       />
       <OurProductsSection />
     </div>

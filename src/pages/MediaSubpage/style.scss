@@ -1,0 +1,74 @@
+.media-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  .videocard {
+    max-height: 234px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+
+    &__image-wrapper {
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    &__text {
+      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      height: auto;
+      padding: 29px 33px 27px 23px;
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    &__image {
+      height: 234px;
+      border-radius: 12px;
+    }
+
+    &__time,
+    &__category {
+      top: 170px;
+    }
+  }
+}
+
+.top-media-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__podcast {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--card-text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__flag {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--card-date);
+  }
+}
