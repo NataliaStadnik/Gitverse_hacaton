@@ -1,4 +1,4 @@
-import {AppRouter, ToDepartmentLink} from '@/shared'
+import {ToDepartmentLink} from '@/shared'
 import './style.scss'
 import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
 import VideoCard from '@/entities/VideoCard/VideoCard'
@@ -62,7 +62,7 @@ type Props = {
 const VideosSectionSmall = ({
   headingSectionClassName,
   headingSection,
-  to
+  to,
 }: Props) => {
   const randomThreeCards = [...VideoCardArray]
     .sort(() => Math.random() - 0.5)

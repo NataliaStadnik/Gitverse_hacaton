@@ -13,7 +13,13 @@ import InfinityIcon from '@/assets/images/InfinityIcon.svg'
 import Git from '@/assets/images/GitIcon.svg'
 import CodeIcon from '@/assets/images/CodeIcon.svg'
 
-export const VideoCardArray: VideoCardDataType[] = [
+type ExtendedVideoCardDataType = VideoCardDataType & {
+  svg: string
+  podcast: string
+  saved: number
+}
+
+export const VideoCardArray: ExtendedVideoCardDataType[] = [
   {
     id: 1,
     img: video1,

@@ -66,42 +66,44 @@ const MainBanner = () => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="wrapper">
-        <Swiper
-          ref={swiperRef}
-          modules={[Autoplay, EffectFade, Pagination]}
-          effect="fade"
-          pagination={{
-            bulletClass: 'main-banner__bullet',
-            bulletActiveClass: 'main-banner__bullet--active',
-          }}
-          autoplay={{
-            delay: delay + duration,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-          }}
-          speed={duration}
-          loop
-          className="main-banner__slider"
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        >
-          {contentBanner.map((elem, i) => (
-            <SwiperSlide key={i}>
-              <div className="container main-banner__container">
-                <div className="main-banner__wrapper">
-                  <h2 className="title title--light">
-                    {elem.title.map((elem, i) => (
-                      <span key={i}> {elem}</span>
-                    ))}
-                  </h2>
-                  <p className="main-banner__text">{elem.text}</p>
-                  <Button text="Подробнее" linkTo="#" />
-                </div>
+        <div className="container">
+          <Swiper
+            ref={swiperRef}
+            modules={[Autoplay, EffectFade, Pagination]}
+            effect="fade"
+            pagination={{
+              bulletClass: 'main-banner__bullet',
+              bulletActiveClass: 'main-banner__bullet--active',
+            }}
+            autoplay={{
+              delay: delay + duration,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            }}
+            speed={duration}
+            loop
+            className="main-banner__slider"
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          >
+            {contentBanner.map((elem, i) => (
+              <SwiperSlide key={i}>
+                <div className="main-banner__container">
+                  <div className="main-banner__wrapper">
+                    <h2 className="title title--light">
+                      {elem.title.map((elem, i) => (
+                        <span key={i}> {elem}</span>
+                      ))}
+                    </h2>
+                    <p className="main-banner__text">{elem.text}</p>
+                    <Button text="Подробнее" linkTo="#" />
+                  </div>
 
-                <AnimationBanner svg={elem.svg} activeIndex={activeIndex} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  <AnimationBanner svg={elem.svg} activeIndex={activeIndex} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   )

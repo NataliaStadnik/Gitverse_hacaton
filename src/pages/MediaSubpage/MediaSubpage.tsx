@@ -69,7 +69,7 @@ const MediaSubpage = () => {
                   category={card.category}
                   children={
                     <TopMediaCard
-                      podcast={card.podcast}
+                      podcast={card?.podcast}
                       saved={card.saved}
                       svg={card.svg}
                     />
