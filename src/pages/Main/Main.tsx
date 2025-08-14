@@ -8,6 +8,7 @@ import {
   VideosSection,
 } from '@/widgets'
 import './style.scss'
+import {AppRouter} from '@/shared'
 
 const Main = () => {
   return (
@@ -17,7 +18,11 @@ const Main = () => {
       <NewsSection />
       <PopularNewsSection />
       <SecondBanner />
-      <VideosSection headingSection="Видео" headingSectionClassName="title" />
+      <VideosSection
+        headingSection="Видео"
+        headingSectionClassName="title"
+        to={AppRouter.media.path}
+      />
       <OurProductsSection />
     </>
   )

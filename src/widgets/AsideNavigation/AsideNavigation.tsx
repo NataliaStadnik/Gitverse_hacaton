@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import './style.scss'
-import {AppRouter, categoriesTags, CategoriesTagsType} from '@/shared'
+import {AppRouter, categoriesTags, CategoriesTagsType, MediaSubpagesEnum} from '@/shared'
 import {Link} from 'react-router-dom'
 
 interface AsideNavigationProps {
@@ -28,7 +28,7 @@ const AsideNavigation: FC<AsideNavigationProps> = ({
             <Link
               className={`aside-nav__btn ${!elem.svg ? 'aside-nav__circle' : 'aside-nav__svg'} ${active === elem.name ? 'aside-nav__btn--active' : ''}`}
               onClick={handleClick}
-              to={AppRouter.mediaSubpages.path(elem.to)}
+              to={AppRouter.mediaSubpages.path(elem.to as MediaSubpagesEnum)}
             >
               {elem?.svg}
               <span>{elem.name}</span>

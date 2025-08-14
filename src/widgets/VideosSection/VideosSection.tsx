@@ -116,7 +116,6 @@ const VideosSection = ({
                   : card.categoryLink,
                 card.id.toString()
               )}
-              id={card.id}
               img={card.img}
               title={card.title}
               text={card.text}

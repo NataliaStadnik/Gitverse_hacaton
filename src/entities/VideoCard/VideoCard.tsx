@@ -6,7 +6,6 @@ import {JSX} from 'react'
 import {MediaSubpagesEnum} from '@/shared'
 
 type Props = {
-  id: number
   img?: string
   title: string
   text: string
@@ -24,7 +23,7 @@ export type VideoCardDataType = {
   categoryLink?: MediaSubpagesEnum
 }
 
-const VideoCard = ({img, title, text, category, children, id, to}: Props) => {
+const VideoCard = ({img, title, text, category, children, to}: Props) => {
   return (
     <Link className="videocard" to={to}>
       <div className={`videocard__bottom`}></div>

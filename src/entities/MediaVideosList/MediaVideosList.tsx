@@ -29,7 +29,6 @@ const MediaVideosList: FC<MediaVideosListProps> = ({dataVideos}) => {
           <VideoCard
             key={card.id}
             to={AppRouter.mediaVideo.path(safeCategory, card.id.toString())}
-            id={card.id}
             img={card.img}
             title={card.title}
             text={card.text}
