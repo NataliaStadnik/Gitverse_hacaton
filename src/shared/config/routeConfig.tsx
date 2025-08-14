@@ -1,3 +1,12 @@
+export enum MediaSubpagesEnum {
+  Popular = 'popular',
+  Podcasts = 'podcasts',
+  Reviews = 'reviews',
+  Cases = 'cases',
+  Guides = 'guides',
+  Interviews = 'interviews',
+}
+
 export const AppRouter = {
   home: {path: '/'},
   tag: {path: (text = ':text') => `/tag/${text}`,},
@@ -11,6 +20,11 @@ export const AppRouter = {
   },
 
   media: {path: '/media'},
+  mediaSubpages: {
+    path: (category: MediaSubpagesEnum = MediaSubpagesEnum.Popular) =>
+      `/media/${category}`,
+  },
+
   products: {path: '/products'},
   productSmartClass: {path: '/products/Smart-Class'},
   productGigaIDE: {path: '/products/Giga-IDE'},

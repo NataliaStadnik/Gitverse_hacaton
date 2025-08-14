@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router'
 import './App.css'
 import {Footer, Header} from '@/widgets'
-import {AppRouter} from '@/shared'
+import {AppRouter, MediaSubpagesEnum} from '@/shared'
 import React from 'react'
 import {useTopScroll} from './hooks'
 
@@ -37,6 +37,9 @@ const SearchPageLazy = React.lazy(
 )
 
 const TagPageLazy = React.lazy(() => import('./pages/TagPage/TagPage'))
+const MediaSubPageLazy = React.lazy(
+  () => import('./pages/MediaSubpage/MediaSubpage')
+)
 
 const App = () => {
   useTopScroll()
@@ -63,6 +66,12 @@ const App = () => {
             element={<OneNewsPageLazy />}
           />
           <Route path={AppRouter.media.path} element={<MediaPageLazy />} />
+          <Route
+            path={AppRouter.mediaSubpages.path(
+              ':category' as MediaSubpagesEnum
+            )}
+            element={<MediaSubPageLazy />}
+          />
           <Route
             path={AppRouter.products.path}
             element={<AllProductsPageLazy />}

@@ -5,20 +5,25 @@ import {Breadcrumbs, BreadcrumbType, DogHelper} from '@/shared'
 interface LayoutProps {
   children: JSX.Element
   message: string
-  pageTitle: string
+  pageTitle?: string
   breadcrumbs: BreadcrumbType[]
 }
 
-const Layout: FC<LayoutProps> = ({children, message, pageTitle, breadcrumbs}) => {
+const Layout: FC<LayoutProps> = ({
+  children,
+  message,
+  pageTitle,
+  breadcrumbs,
+}) => {
   return (
     <div className="container">
       <div className="layout">
         <div className="layout__header">
-          <Breadcrumbs links={breadcrumbs}/>
+          <Breadcrumbs links={breadcrumbs} />
           <DogHelper message={message} />
         </div>
 
-        <h2 className="title">{pageTitle}</h2>
+        {pageTitle && <h2 className="title">{pageTitle}</h2>}
         <div className="layout__wrapper">{children}</div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import './style.scss'
-import {DogHelper} from '@/shared'
+import {AppRouter, DogHelper} from '@/shared'
 import {OurProductsSection} from '@/widgets'
 import Podcasts from '@/widgets/Podcasts/Podcasts'
 import {VideosSection} from '@/widgets'
@@ -15,19 +15,23 @@ const MediaPage = () => {
       <VideosSection
         headingSection="Популярное"
         headingSectionClassName="title"
+        to={AppRouter.mediaSubpages.path('popular')}
       />
       <Podcasts />
       <VideosSectionSmall
         headingSection="Обзоры"
         headingSectionClassName="title"
+        to={AppRouter.mediaSubpages.path('reviews')}
       />
       <VideosSectionSmall
         headingSection="Кейсы"
         headingSectionClassName="title"
+        to={AppRouter.mediaSubpages.path('cases')}
       />
       <VideosSectionSmall
         headingSection="Гайды"
         headingSectionClassName="title"
+        to={AppRouter.mediaSubpages.path('guides')}
       />
       <OurProductsSection />
     </div>

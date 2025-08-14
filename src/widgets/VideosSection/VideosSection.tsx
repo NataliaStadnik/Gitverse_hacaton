@@ -57,15 +57,16 @@ const VideoCardArray: VideoCardDataType[] = [
 type Props = {
   headingSection: string
   headingSectionClassName: string
+  to: string
 }
 
-const VideosSection = ({headingSectionClassName, headingSection}: Props) => {
+const VideosSection = ({headingSectionClassName, headingSection, to}: Props) => {
   return (
     <section className="videos-section">
       <div className="container videos-section__container">
         <div className="top-section">
           <h2 className={headingSectionClassName}>{headingSection}</h2>
-          <ToDepartmentLink text="В раздел" to={AppRouter.media.path} />
+          <ToDepartmentLink text="В раздел" to={to} />
         </div>
         <div className="videos-section__cards">
           {VideoCardArray.map((card) => (

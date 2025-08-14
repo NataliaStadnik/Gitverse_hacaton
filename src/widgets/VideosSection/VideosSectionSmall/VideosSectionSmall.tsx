@@ -57,10 +57,12 @@ const VideoCardArray: VideoCardDataType[] = [
 type Props = {
   headingSection: string
   headingSectionClassName: string
+  to: string
 }
 const VideosSectionSmall = ({
   headingSectionClassName,
   headingSection,
+  to
 }: Props) => {
   const randomThreeCards = [...VideoCardArray]
     .sort(() => Math.random() - 0.5)
@@ -71,7 +73,7 @@ const VideosSectionSmall = ({
       <div className="container videos-section__container">
         <div className="top-section">
           <h2 className={headingSectionClassName}>{headingSection}</h2>
-          <ToDepartmentLink text="В раздел" to={AppRouter.media.path} />
+          <ToDepartmentLink text="В раздел" to={to} />
         </div>
         <div className="videos-section__cards">
           {randomThreeCards.map((card) => (
