@@ -9,7 +9,7 @@ export enum MediaSubpagesEnum {
 
 export const AppRouter = {
   home: {path: '/'},
-  tag: {path: (text = ':text') => `/tag/${text}`,},
+  tag: {path: (text = ':text') => `/tag/${text}`},
   articles: {path: '/articles'},
   article: {
     path: (id = ':id') => `/articles/${id}`,

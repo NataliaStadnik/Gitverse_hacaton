@@ -3,16 +3,18 @@ import {ArticleCardDataType} from './ArticleBasic/ArticleBasic'
 import ProductArticle from './ProductArticle/ProductArticle'
 import Layout from './Layout/Layout'
 import FilterBlock from './FilterBlock/FilterBlock'
-import SearchList from './SearchList/SearchList'
+import {searchArticle} from './SearchList/SearchList'
 import {CardWithStatisticType} from './ArticleBasic/ArticleBasic'
 import SortingBlock from './SortingBlock/SortingBlock'
+import MediaArticle from './MediaArticle/MediaArticle'
 
 export {
   ArticleBasic,
   ProductArticle,
   Layout,
   FilterBlock,
-  SearchList,
-  SortingBlock
+  SortingBlock,
+  MediaArticle,
+  searchArticle,
 }
 export type {ArticleCardDataType, CardWithStatisticType}

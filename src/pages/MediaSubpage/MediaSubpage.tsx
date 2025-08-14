@@ -1,4 +1,4 @@
-import {Layout, SearchList} from '@/entities'
+import {ArticleBasic, Layout, searchArticle} from '@/entities'
 import './style.scss'
 import {
   AppRouter,
@@ -56,7 +56,11 @@ const MediaSubpage = () => {
           items={asideItemsMunu}
         />
         <div className="layout-inner">
-          <SearchList />
+          <ul className="searches">
+            {[1, 2, 3, 4, 5].map((elem) => (
+              <ArticleBasic key={elem} data={searchArticle} />
+            ))}
+          </ul>
         </div>
       </>
     </Layout>
