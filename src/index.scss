@@ -282,3 +282,28 @@ ul {
     animation: slide-up 0.8s ease forwards;
   }
 }
+
+.searches {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+
+  .article-basic {
+    position: relative;
+    padding: 24px 32px;
+    min-height: 295px;
+
+    &__date {
+      font-size: 17px;
+      line-height: 23px;
+    }
+
+    &__top {
+      margin-bottom: 17px;
+    }
+  }
+
+  .tag-link:not(:last-child) {
+    margin-right: 20px;
+  }
+}

@@ -10,6 +10,7 @@ import {CategoriesTagsType} from './config/CategoriesTags'
 import {categoriesTags} from './config/CategoriesTags'
 import { BreadcrumbType } from './Breadcrumbs/Breadcrumbs'
 import ArrowButton from './ArrowButton/ArrowButton'
+import { MediaSubpagesEnum } from './config/routeConfig'
 
 export {
   AppRouter,
@@ -22,7 +23,8 @@ export {
   DogHelper,
   Breadcrumbs,
   categoriesTags,
-  ArrowButton
+  ArrowButton,
+  MediaSubpagesEnum
 }
 
-export type {CategoriesTagsType, BreadcrumbType}
+export type {CategoriesTagsType, BreadcrumbType,}

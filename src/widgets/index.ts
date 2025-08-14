@@ -7,8 +7,12 @@ import OurProductsSection from './OurProductsSection/OurProductsSection'
 import PopularNewsSection from './PopularNewsSection/PopularNewsSection'
 import SecondBanner from './SecondBanner/SecondBanner'
 import VideosSection from './VideosSection/VideosSection'
+import VideosSectionSmall from './VideosSection/VideosSectionSmall/VideosSectionSmall'
 import {ProductCardType} from './OurProductsSection/OurProductsSection'
 import AsideNavigation from './AsideNavigation/AsideNavigation'
+import Podcasts from './Podcasts/Podcasts'
+import { VideoCardArray } from './VideosSection/VideosSection'
+import { ExtendedVideoCardDataType } from './VideosSection/VideosSection'
 
 export {
   Header,
@@ -21,6 +25,9 @@ export {
   SecondBanner,
   AsideNavigation,
   VideosSection,
+  VideosSectionSmall,
+  Podcasts,
+  VideoCardArray
 }
 
-export type {ProductCardType}
+export type {ProductCardType, ExtendedVideoCardDataType}

@@ -1,4 +1,4 @@
-import {FilterBlock, Layout, SearchList} from '@/entities'
+import {ArticleBasic, FilterBlock, Layout, searchArticle} from '@/entities'
 import './style.scss'
 import {AsideNavigation} from '@/widgets'
 import {AppRouter, BreadcrumbType} from '@/shared'
@@ -50,7 +50,11 @@ const SearchResult = () => {
             handleRemoveTag={handleRemoveTag}
             selectedTags={selectedTags}
           />
-          <SearchList />
+          <ul className="searches">
+            {[1, 2, 3, 4, 5].map((elem) => (
+              <ArticleBasic key={elem} data={searchArticle} />
+            ))}
+          </ul>
         </div>
       </>
     </Layout>

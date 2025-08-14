@@ -14,7 +14,6 @@ interface AnimationBannerProps {
 }
 
 const AnimationBanner: FC<AnimationBannerProps> = ({svg, activeIndex}) => {
-  console.log(activeIndex)
   return (
     <div className="animation-banner">
       <div className="boble boble__big">{svg('active')}</div>

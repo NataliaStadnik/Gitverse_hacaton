@@ -9,25 +9,28 @@
   margin-bottom: 48px;
   cursor: pointer;
 
-  &::after {
-    content: '';
+  &__bottom {
     position: absolute;
+    padding: 50px 24px;
+    content: '';
+    bottom: 21px;
     left: 0;
-    right: 0;
-    bottom: 0;
-    height: 80%;
+    width: 100%;
     background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.8) 20%,
-      rgba(255, 255, 255, 0.3) 40%,
-      rgba(255, 255, 255, 0.15) 60%,
-      rgba(255, 255, 255, 0.05) 80%,
-      rgba(255, 255, 255, 0) 100%
+      0deg,
+      rgba(var(--card-bg-rgb), 1) 0%,
+      rgba(var(--card-bg-rgb), 0) 100%
     );
-    z-index: 1;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    box-shadow: 0px 2px 8.6px var(--shadow-color, rgba(0, 0, 0, 0.1));
+
+    .videocard__bottom {
+      opacity: 0;
+      transform: translateY(100px);
+    }
   }
 
   &__image-wrapper {
@@ -41,10 +44,12 @@
     display: block;
     position: relative;
     z-index: 0;
+    object-fit: cover;
   }
 
   &__title {
     position: absolute;
+    max-width: 85%;
     bottom: 20px;
     left: 20px;
     color: #ecf1f6;
@@ -58,7 +63,7 @@
     font-size: 16px;
     line-height: 24px;
     color: var(--card-text);
-    padding: 16px;
+    padding: 20px 16px 23px 16px;
   }
 
   &__play-img,
@@ -97,10 +102,6 @@
   }
 
   &:hover {
-    &::after {
-      opacity: 0;
-    }
-
     .videocard__title {
       opacity: 0;
     }

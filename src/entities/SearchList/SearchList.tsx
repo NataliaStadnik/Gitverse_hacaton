@@ -1,7 +1,6 @@
-import ArticleBasic, {CardWithStatisticType} from '../ArticleBasic/ArticleBasic'
-import './style.scss'
+import {CardWithStatisticType} from '../ArticleBasic/ArticleBasic'
 
-const searchArticle: CardWithStatisticType = {
+export const searchArticle: CardWithStatisticType = {
   id: 1,
   watch: 12,
   messages: 12,
@@ -12,15 +11,3 @@ const searchArticle: CardWithStatisticType = {
   label: 'Open Source',
   text: 'Чтобы две отдельные компьютерные системы смогли обмениваться информацией, нужно организовать способ связи — сетевой протокол. Это можно сделать с помощью разных технологий. Самые популярные из них — HTTP и FTP. Первая применяется для обмена гипертекстом, например HTML-документами. Вторая больше подходит для передачи больших файлов и проведения длинных сессий. Подробнее о FTP — в нашей статье.',
 }
-
-const SearchList = () => {
-  return (
-    <ul className="searches">
-      {[1, 2, 3, 4, 5].map((elem) => (
-        <ArticleBasic key={elem} data={searchArticle} />
-      ))}
-    </ul>
-  )
-}
-
-export default SearchList

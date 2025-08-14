@@ -49,7 +49,7 @@ const PodcastCardArray: PodcastCardDataType[] = [
 export default function Podcasts() {
   return (
     <div className="podcast__container">
-      <h1 className="podcast__title">Подкасты</h1>
+      <h2 className="podcast__title">Подкасты</h2>
       <div className="podcast__wrapper">
         {PodcastCardArray.map(({id, img, title, text, subtitle}) => (
           <PodcastCard

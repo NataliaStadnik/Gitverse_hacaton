@@ -73,7 +73,7 @@ const NewsSection = () => {
   return (
     <section className="news-section">
       <div className="news-section__wrapper">
-        <div className="container">
+        <div className="container news-section__container">
           <h2 className="title">Новости GitVerse</h2>
 
           <div className="news-slider__nav">

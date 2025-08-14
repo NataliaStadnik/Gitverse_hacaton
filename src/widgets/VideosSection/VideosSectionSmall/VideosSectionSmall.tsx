@@ -1,7 +1,6 @@
-import {AppRouter, ToDepartmentLink} from '@/shared'
+import {AppRouter, MediaSubpagesEnum, ToDepartmentLink} from '@/shared'
 import './style.scss'
-import {VideoCardDataType} from '@/entities/VideoCard/VideoCard'
-import VideoCard from '@/entities/VideoCard/VideoCard'
+import {VideoCard, VideoCardDataType} from '@/entities'
 import video1 from '@/assets/images/video-img1.png'
 import video2 from '@/assets/images/video-img2.png'
 import video3 from '@/assets/images/video-img3.png'
@@ -57,10 +56,12 @@ const VideoCardArray: VideoCardDataType[] = [
 type Props = {
   headingSection: string
   headingSectionClassName: string
+  to: string
 }
 const VideosSectionSmall = ({
   headingSectionClassName,
   headingSection,
+  to,
 }: Props) => {
   const randomThreeCards = [...VideoCardArray]
     .sort(() => Math.random() - 0.5)
@@ -71,12 +72,17 @@ const VideosSectionSmall = ({
       <div className="container videos-section__container">
         <div className="top-section">
           <h2 className={headingSectionClassName}>{headingSection}</h2>
-          <ToDepartmentLink text="В раздел" to={AppRouter.media.path} />
+          <ToDepartmentLink text="В раздел" to={to} />
         </div>
         <div className="videos-section__cards">
           {randomThreeCards.map((card) => (
             <VideoCard
               key={card.id}
+              to={AppRouter.mediaVideo.path(
+                to.split('/').at(-1) as MediaSubpagesEnum,
+                card.id.toString()
+              )}
+              id={card.id}
               img={card.img}
               title={card.title}
               text={card.text}
