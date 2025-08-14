@@ -1,5 +1,4 @@
 import {CardWithStatisticType} from '../ArticleBasic/ArticleBasic'
-import './style.scss'
 
 export const searchArticle: CardWithStatisticType = {
   id: 1,
