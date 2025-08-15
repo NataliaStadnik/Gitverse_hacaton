@@ -6,8 +6,8 @@ import {useTagFilter} from '@/hooks'
 import ArticleBody from './ArticleBody'
 
 export const asideItemsMunu: CategoriesTagsType[] = [
-  {name: 'Что такое webpack', tagLink: '#about-wp'},
-  {name: 'Зачем нужен webpack', tagLink: '#why-wp'},
+  {name: 'Что такое webpack', tagLink: '#part-1'},
+  {name: 'Зачем нужен webpack', tagLink: '#part-2'},
   {name: 'Обсуждения', tagLink: '#discusses'},
   {name: 'Похожее', tagLink: '#similar'},
 ]
@@ -28,7 +28,7 @@ const OneArticlePage = () => {
       <Layout
         message={'Пишу тесты и документацию, пока ты пьёшь кофе'}
         breadcrumbs={breadcrumbs}
-        classes='layout__one-article'
+        classes="layout__one-article"
       >
         <>
           <AsideNavigation
@@ -38,7 +38,7 @@ const OneArticlePage = () => {
           />
           <div className="layout-inner">
             <div>
-              <ArticleBody/>
+              <ArticleBody />
               <Comments />
               <h3 className="content-title" id="#similar">
                 Похожее

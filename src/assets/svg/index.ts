@@ -30,6 +30,10 @@ import Like from './Like'
 import Dislike from './Dislike'
 import ArrowAnswer from './ArrowAnswer'
 import Heart from './Heart'
+import Blocks from './Blocks'
+import Clock from './Clock'
+import Timer from './Timer'
+import Triangle from './Triangle'
 
 export {
   Sun,
@@ -63,5 +67,9 @@ export {
   Like,
   Dislike,
   ArrowAnswer,
-  Heart
+  Heart,
+  Blocks,
+  Clock,
+  Timer,
+  Triangle
 }

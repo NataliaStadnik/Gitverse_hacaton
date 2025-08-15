@@ -11,6 +11,7 @@ import {VideoCardDataType} from './VideoCard/VideoCard'
 import MediaVideosList from './MediaVideosList/MediaVideosList'
 import Comments from './Comments/Comments'
 import VideoPlayer from './VideoPlayer/VideoPlayer'
+import AudioPlayer from './AudioPlayer/AudioPlayer'
 
 export {
   ArticleBasic,
@@ -23,6 +24,7 @@ export {
   MediaVideosList,
   Comments,
   VideoPlayer,
+  AudioPlayer
 }
 
 export type {ArticleCardDataType, CardWithStatisticType, VideoCardDataType}
