@@ -7,6 +7,7 @@ interface LayoutProps {
   message: string
   pageTitle?: string
   breadcrumbs: BreadcrumbType[]
+  classes?: string
 }
 
 const Layout: FC<LayoutProps> = ({
@@ -14,10 +15,11 @@ const Layout: FC<LayoutProps> = ({
   message,
   pageTitle,
   breadcrumbs,
+  classes
 }) => {
   return (
     <div className="container">
-      <div className="layout">
+      <div className={`layout ${classes ? classes : ''}`}>
         <div className="layout__header">
           <Breadcrumbs links={breadcrumbs} />
           <DogHelper message={message} />
