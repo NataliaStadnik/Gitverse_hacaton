@@ -25,6 +25,7 @@ import Cross from './Cross'
 import GlobeProduct from './GlobeProduct'
 import ScProduct from './ScProduct'
 import GProduct from './GProduct'
+import Img from './Img'
 
 export {
   Sun,
@@ -54,4 +55,5 @@ export {
   GProduct,
   ScProduct,
   GlobeProduct,
+  Img
 }

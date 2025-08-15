@@ -1,4 +1,4 @@
-import {Layout, MediaVideosList} from '@/entities'
+import {Comments, Layout, MediaVideosList} from '@/entities'
 import './style.scss'
 import {AppRouter, BreadcrumbType} from '@/shared'
 import AsideNavigation from '@/widgets/AsideNavigation/AsideNavigation'
@@ -36,7 +36,8 @@ const OneVideoPage = () => {
         />
         <div className="layout-inner video-page">
           <div className="video-page">
-            <h2 className="video-page__title">Похожее</h2>
+            <Comments/>
+            <h3 className="video-page__title">Похожее</h3>
             <MediaVideosList dataVideos={VideoCardArray.slice(0, 4)} />
           </div>
         </div>
