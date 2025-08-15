@@ -10,7 +10,7 @@ import Settings from './svg/Settings'
 import Resize from './svg/Resize'
 import Window from './svg/Window'
 import WindowDot from './svg/WindowDot'
-import {CurlyArrow, Flag, Heart} from '@/assets/svg'
+import {Statistic} from '@/shared'
 
 const VideoPlayer = () => {
   const {id} = useParams()
@@ -62,20 +62,7 @@ const VideoPlayer = () => {
         <div className="outer-hover"></div>
       </div>
 
-      <div className="video-player__statistic">
-        <button>
-          <Heart />
-          <span>257</span>
-        </button>
-        <button>
-          <Flag />
-          <span>{data?.saved}</span>
-        </button>
-        <button>
-          <CurlyArrow />
-        </button>
-      </div>
-
+      <Statistic />
       <p className="video-player__descr">{data?.text}</p>
     </section>
   )

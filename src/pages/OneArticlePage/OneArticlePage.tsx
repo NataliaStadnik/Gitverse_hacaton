@@ -3,6 +3,7 @@ import './style.scss'
 import {AppRouter, BreadcrumbType, CategoriesTagsType} from '@/shared'
 import {AsideNavigation, OurProductsSection} from '@/widgets'
 import {useTagFilter} from '@/hooks'
+import ArticleBody from './ArticleBody'
 
 export const asideItemsMunu: CategoriesTagsType[] = [
   {name: 'Что такое webpack', tagLink: '#about-wp'},
@@ -37,6 +38,7 @@ const OneArticlePage = () => {
           />
           <div className="layout-inner">
             <div>
+              <ArticleBody/>
               <Comments />
               <h3 className="content-title" id="#similar">
                 Похожее
