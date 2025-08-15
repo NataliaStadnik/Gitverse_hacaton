@@ -1,14 +1,14 @@
-import {Comments, Layout, MediaVideosList} from '@/entities'
+import {Comments, Layout, MediaVideosList, VideoPlayer} from '@/entities'
 import './style.scss'
-import {AppRouter, BreadcrumbType} from '@/shared'
+import {AppRouter, BreadcrumbType, CategoriesTagsType} from '@/shared'
 import AsideNavigation from '@/widgets/AsideNavigation/AsideNavigation'
 import {useTagFilter} from '@/hooks'
 import {VideoCardArray} from '@/widgets'
 
-export const asideItemsMunu = [
-  {name: 'Git для начинающих'},
-  {name: 'Обсуждения'},
-  {name: 'Похожее'},
+export const asideItemsMunu: CategoriesTagsType[] = [
+  {name: 'Git для начинающих', tagLink: '#video-player'},
+  {name: 'Обсуждения', tagLink: '#discusses'},
+  {name: 'Похожее', tagLink: '#similar'},
 ]
 
 const OneVideoPage = () => {
@@ -36,8 +36,11 @@ const OneVideoPage = () => {
         />
         <div className="layout-inner video-page">
           <div className="video-page">
-            <Comments/>
-            <h3 className="video-page__title">Похожее</h3>
+            <VideoPlayer />
+            <Comments />
+            <h3 className="video-page__title" id="#similar">
+              Похожее
+            </h3>
             <MediaVideosList dataVideos={VideoCardArray.slice(0, 4)} />
           </div>
         </div>

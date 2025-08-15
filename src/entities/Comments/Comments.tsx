@@ -9,7 +9,7 @@ const Comments = () => {
   }
 
   return (
-    <section className="comments-block">
+    <section className="comments-block" id="#discusses">
       <div className="comments-block__header">
         <h3>Обсуждения</h3>
         <span className="comments-block__amount">5</span>

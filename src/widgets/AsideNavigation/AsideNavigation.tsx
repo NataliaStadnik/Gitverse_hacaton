@@ -1,6 +1,11 @@
 import {FC} from 'react'
 import './style.scss'
-import {AppRouter, categoriesTags, CategoriesTagsType, MediaSubpagesEnum} from '@/shared'
+import {
+  AppRouter,
+  categoriesTags,
+  CategoriesTagsType,
+  MediaSubpagesEnum,
+} from '@/shared'
 import {Link} from 'react-router-dom'
 
 interface AsideNavigationProps {
@@ -15,9 +20,15 @@ const AsideNavigation: FC<AsideNavigationProps> = ({
   setTypeSearch,
 }) => {
   const handleClick = (
-    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+    tagLink?: string
   ) => {
     setTypeSearch(e.currentTarget.textContent || '')
+    const el = document.getElementById(tagLink ?? 'root')
+    if (!el) return
+
+    const top = el.getBoundingClientRect().top + window.scrollY - 60
+    window.scrollTo({top, behavior: 'smooth'})
   }
 
   return (
@@ -36,7 +47,7 @@ const AsideNavigation: FC<AsideNavigationProps> = ({
           ) : (
             <button
               className={`aside-nav__btn ${!elem.svg ? 'aside-nav__circle' : 'aside-nav__svg'} ${active === elem.name ? 'aside-nav__btn--active' : ''}`}
-              onClick={handleClick}
+              onClick={(e) => handleClick(e, elem.tagLink)}
             >
               {elem?.svg}
               <span>{elem.name}</span>

@@ -29,6 +29,7 @@ import Img from './Img'
 import Like from './Like'
 import Dislike from './Dislike'
 import ArrowAnswer from './ArrowAnswer'
+import Heart from './Heart'
 
 export {
   Sun,
@@ -62,4 +63,5 @@ export {
   Like,
   Dislike,
   ArrowAnswer,
+  Heart
 }
