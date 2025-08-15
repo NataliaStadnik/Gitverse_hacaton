@@ -26,6 +26,9 @@ import GlobeProduct from './GlobeProduct'
 import ScProduct from './ScProduct'
 import GProduct from './GProduct'
 import Img from './Img'
+import Like from './Like'
+import Dislike from './Dislike'
+import ArrowAnswer from './ArrowAnswer'
 
 export {
   Sun,
@@ -55,5 +58,8 @@ export {
   GProduct,
   ScProduct,
   GlobeProduct,
-  Img
+  Img,
+  Like,
+  Dislike,
+  ArrowAnswer,
 }

@@ -1,5 +1,7 @@
-import {Img} from '@/assets/svg'
+import {ArrowBtn, Img} from '@/assets/svg'
 import './style.scss'
+import OneComment from './OneComment'
+import OneAnswer from './OneAnswer'
 
 const Comments = () => {
   const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
@@ -13,7 +15,7 @@ const Comments = () => {
         <span className="comments-block__amount">5</span>
       </div>
 
-      <form>
+      <form className="form">
         <div className="comments-input">
           <textarea
             name="comment"
@@ -22,8 +24,8 @@ const Comments = () => {
           />
           <div className="comments-input__btn">
             <div className="file-input">
-              <Img />
               <input type="file" />
+              <Img />
             </div>
 
             <button className="comments-input__submit" onClick={handleSubmit}>
@@ -32,6 +34,24 @@ const Comments = () => {
           </div>
         </div>
       </form>
+
+      <div className="comment-block-wrapper">
+        <OneComment
+          message={
+            'Комментарий. Так выглядит в две строки. Если текста много, то ширина текстового блока по ширине контейнера.'
+          }
+        />
+        <OneAnswer />
+      </div>
+
+      <div className="comment-block-wrapper">
+        <OneComment message="Ещё один коммент." />
+      </div>
+
+      <button className="btn-all-comments">
+        <span>Показать все комментарии</span>
+        <ArrowBtn />
+      </button>
     </section>
   )
 }
