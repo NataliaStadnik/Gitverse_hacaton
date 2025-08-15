@@ -1,6 +1,6 @@
 import {ArrowAnswer, Dislike, Like} from '@/assets/svg'
 import './style.scss'
-import {FC} from 'react'
+import {FC, useState} from 'react'
 
 interface OneCommentProps {
   message: string
@@ -13,6 +13,8 @@ const OneComment: FC<OneCommentProps> = ({
   answerTo,
   isAnswer = false,
 }) => {
+  const [isModal, setModal] = useState(false)
+
   return (
     <div className="comment-wrapper">
       <div className="comment-wrapper__top">
@@ -20,7 +22,18 @@ const OneComment: FC<OneCommentProps> = ({
           <span className="comment-wrapper__author">chupzzz</span>
           <span className="comment-wrapper__date">19 июня, 15:04</span>
         </div>
-        <button className="comment-wrapper__btn-dots">...</button>
+        <button
+          className="comment-wrapper__btn-dots"
+          onClick={() => setModal(!isModal)}
+        >
+          <span>...</span>
+          {isModal && (
+            <div className="comment-modal">
+              <button>Удалить</button>
+              <button>Изменить</button>
+            </div>
+          )}
+        </button>
       </div>
 
       {answerTo ? (
@@ -45,7 +58,6 @@ const OneComment: FC<OneCommentProps> = ({
           <button className="comment-estimate__answer">Ответить</button>
         )}
       </div>
-
 
       {isAnswer && (
         <button className="answers__more">
