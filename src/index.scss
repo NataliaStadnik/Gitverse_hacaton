@@ -155,7 +155,8 @@ p {
 }
 
 button,
-input {
+input,
+textarea {
   padding: 0;
   border: none;
   border-radius: 0;
@@ -163,6 +164,7 @@ input {
   font: inherit;
   color: inherit;
   background-color: transparent;
+  resize: none;
   font-family: 'Inter', sans-serif;
 }
 
@@ -170,6 +172,14 @@ button:active,
 button:hover,
 button:focus,
 button:focus-visible {
+  outline: none;
+  cursor: pointer;
+}
+
+textarea:active,
+textarea:hover,
+textarea:focus,
+textarea:focus-visible {
   outline: none;
   cursor: pointer;
 }
@@ -306,4 +316,16 @@ ul {
   .tag-link:not(:last-child) {
     margin-right: 20px;
   }
+}
+
+.content-title {
+  margin-bottom: 40px;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.5px;
+  color: var(--page-heading);
+}
+
+.comments-block {
+  margin-bottom: 120px;
 }

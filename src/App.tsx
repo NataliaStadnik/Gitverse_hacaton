@@ -15,9 +15,7 @@ const OneArticlePageLazy = React.lazy(
 const AllNewsPageLazy = React.lazy(
   () => import('./pages/AllNewsPage/AllNewsPage')
 )
-const OneNewsPageLazy = React.lazy(
-  () => import('./pages/OneNewsPage/OneNewsPage')
-)
+
 const MediaPageLazy = React.lazy(() => import('./pages/MediaPage/MediaPage'))
 const AllProductsPageLazy = React.lazy(
   () => import('./pages/AllProductsPage/AllProductsPage')
@@ -68,7 +66,7 @@ const App = () => {
           <Route path={AppRouter.allNews.path} element={<AllNewsPageLazy />} />
           <Route
             path={AppRouter.news.path(':id')}
-            element={<OneNewsPageLazy />}
+            element={<OneArticlePageLazy />}
           />
           <Route path={AppRouter.media.path} element={<MediaPageLazy />} />
           <Route

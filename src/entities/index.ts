@@ -9,6 +9,8 @@ import SortingBlock from './SortingBlock/SortingBlock'
 import VideoCard from './VideoCard/VideoCard'
 import {VideoCardDataType} from './VideoCard/VideoCard'
 import MediaVideosList from './MediaVideosList/MediaVideosList'
+import Comments from './Comments/Comments'
+import VideoPlayer from './VideoPlayer/VideoPlayer'
 
 export {
   ArticleBasic,
@@ -19,6 +21,8 @@ export {
   searchArticle,
   VideoCard,
   MediaVideosList,
+  Comments,
+  VideoPlayer,
 }
 
 export type {ArticleCardDataType, CardWithStatisticType, VideoCardDataType}

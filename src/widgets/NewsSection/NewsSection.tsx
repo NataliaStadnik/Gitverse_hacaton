@@ -118,6 +118,7 @@ const NewsSection = () => {
             {NewsCardArray.map((card) => (
               <SwiperSlide key={card.id}>
                 <NewsCard
+                  id={card.id}
                   image={card.img}
                   label={card.label}
                   title={card.title}

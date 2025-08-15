@@ -17,6 +17,7 @@ export type CategoriesTagsType = {
   svg?: JSX.Element
   tags?: string[]
   to?: string
+  tagLink?:string
 }
 
 export const categoriesTags: CategoriesTagsType[] = [

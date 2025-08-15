@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import './style.scss'
-import {ArticleLabel, TagLink} from '@/shared'
+import {AppRouter, ArticleLabel, TagLink} from '@/shared'
 import {Link} from 'react-router-dom'
 import {CurlyArrow, Eye, Flag, Messages} from '@/assets/svg'
 import {truncateText} from '@/shared/utils/truncateText'
@@ -68,7 +68,7 @@ const ArticleBasic: FC<ArticleBasicProps> = ({data}) => {
           ))}
         </div>
 
-        <Link to={''}>
+        <Link to={AppRouter.article.path(data.id.toString())}>
           <h3 className="article-basic__title">
             {truncateText(data.name, 55)}
           </h3>
