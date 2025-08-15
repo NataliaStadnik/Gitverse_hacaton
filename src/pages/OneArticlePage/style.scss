@@ -1,0 +1,79 @@
+.layout__one-article {
+  margin-bottom: 125px;
+}
+
+.article-body {
+  padding: 34px 32px;
+  margin-bottom: 58px;
+  background-color: var(--card-background);
+  border-radius: 12px;
+
+  &__tags {
+    margin-bottom: 20px;
+  }
+
+  &__author {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--card-text-secondary);
+  }
+
+  .title {
+    margin-bottom: 15px;
+    font-size: 41px;
+    line-height: 47px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--card-text);
+  }
+
+  &__subtitle {
+    font-size: 33px;
+    line-height: 35px;
+    color: var(--card-text);
+    font-weight: 600;
+  }
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__code {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+    gap: 23px;
+    background-color: var(--article-label-bg);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--card-text-secondary);
+  }
+
+  &__copy-btn {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .common-statistic {
+    margin-bottom: 0;
+  }
+}

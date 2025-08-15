@@ -1,12 +1,13 @@
 import {ArticleBasic, Comments, Layout, searchArticle} from '@/entities'
 import './style.scss'
 import {AppRouter, BreadcrumbType, CategoriesTagsType} from '@/shared'
-import {AsideNavigation} from '@/widgets'
+import {AsideNavigation, OurProductsSection} from '@/widgets'
 import {useTagFilter} from '@/hooks'
+import ArticleBody from './ArticleBody'
 
 export const asideItemsMunu: CategoriesTagsType[] = [
-  {name: 'Что такое webpack', tagLink: '#about-wp'},
-  {name: 'Зачем нужен webpack', tagLink: '#why-wp'},
+  {name: 'Что такое webpack', tagLink: '#part-1'},
+  {name: 'Зачем нужен webpack', tagLink: '#part-2'},
   {name: 'Обсуждения', tagLink: '#discusses'},
   {name: 'Похожее', tagLink: '#similar'},
 ]
@@ -23,31 +24,36 @@ const OneArticlePage = () => {
   ]
 
   return (
-    <Layout
-      message={'Пишу тесты и документацию, пока ты пьёшь кофе'}
-      breadcrumbs={breadcrumbs}
-    >
-      <>
-        <AsideNavigation
-          active={selectedCategory}
-          setTypeSearch={handleCategorySelect}
-          items={asideItemsMunu}
-        />
-        <div className="layout-inner">
-          <div>
-            <Comments />
-            <h3 className="content-title" id="#similar">
-              Похожее
-            </h3>
-            <ul className="searches">
-              {[1, 2, 3].map((elem) => (
-                <ArticleBasic key={elem} data={searchArticle} />
-              ))}
-            </ul>
+    <>
+      <Layout
+        message={'Пишу тесты и документацию, пока ты пьёшь кофе'}
+        breadcrumbs={breadcrumbs}
+        classes="layout__one-article"
+      >
+        <>
+          <AsideNavigation
+            active={selectedCategory}
+            setTypeSearch={handleCategorySelect}
+            items={asideItemsMunu}
+          />
+          <div className="layout-inner">
+            <div>
+              <ArticleBody />
+              <Comments />
+              <h3 className="content-title" id="#similar">
+                Похожее
+              </h3>
+              <ul className="searches">
+                {[1, 2, 3].map((elem) => (
+                  <ArticleBasic key={elem} data={searchArticle} />
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </>
-    </Layout>
+        </>
+      </Layout>
+      <OurProductsSection />
+    </>
   )
 }
 

@@ -11,6 +11,7 @@ import {categoriesTags} from './config/CategoriesTags'
 import { BreadcrumbType } from './Breadcrumbs/Breadcrumbs'
 import ArrowButton from './ArrowButton/ArrowButton'
 import { MediaSubpagesEnum } from './config/routeConfig'
+import Statistic from './Statistic/Statistic'
 
 export {
   AppRouter,
@@ -24,7 +25,8 @@ export {
   Breadcrumbs,
   categoriesTags,
   ArrowButton,
-  MediaSubpagesEnum
+  MediaSubpagesEnum,
+  Statistic
 }
 
 export type {CategoriesTagsType, BreadcrumbType,}
