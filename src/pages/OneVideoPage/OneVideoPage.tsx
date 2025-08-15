@@ -38,7 +38,7 @@ const OneVideoPage = () => {
           <div className="video-page">
             <VideoPlayer />
             <Comments />
-            <h3 className="video-page__title" id="#similar">
+            <h3 className="content-title" id="#similar">
               Похожее
             </h3>
             <MediaVideosList dataVideos={VideoCardArray.slice(0, 4)} />
